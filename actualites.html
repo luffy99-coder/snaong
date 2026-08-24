@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Actualités — SNA-ONG | Sud-Nord Actions</title>
+<meta id="meta-desc" name="description" content="Suivez les actualités et projets de terrain de Sud-Nord Actions ONG à Djougou : culture, santé, éducation, droits humains et eau.">
+<link id="canonical-link" rel="canonical" href="https://snaong.org/actualites.html">
+<meta property="og:type" content="article">
+<meta id="og-title" property="og:title" content="Actualités — SNA-ONG">
+<meta id="og-desc" property="og:description" content="Suivez les projets de terrain de Sud-Nord Actions ONG à Djougou, Bénin.">
+<meta id="og-image" property="og:image" content="https://snaong.org/hero.png">
+<meta id="og-url" property="og:url" content="https://snaong.org/actualites.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A5C; --navy-dark:#0F2340; --green:#2E7D4F; --green-dark:#1F5C38;
+  --gold:#C9974C; --ink:#1C1F26; --text:#4B5563; --muted:#7A8590;
+  --white:#FFFFFF; --surface:#F5F7F9; --line:rgba(27,58,92,.1);
+  --shadow-sm:0 6px 18px rgba(15,35,64,.08); --shadow-md:0 16px 40px rgba(15,35,64,.12);
+  --radius:14px; --disp:'Playfair Display',serif; --body:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,.8,.25,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer}
+::selection{background:var(--green);color:var(--white)}
+.container{width:min(1200px,calc(100% - 48px));margin-inline:auto}
+.container.narrow{max-width:760px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;height:82px;display:flex;align-items:center;transition:height .3s var(--ease);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+header.scrolled{height:70px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:42px;transition:height .3s ease}
+header.scrolled .brand img{height:36px}
+.brand-name{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--navy)}
+nav{display:flex;align-items:center;gap:6px}
+.nav-link{padding:10px 16px;font-size:14px;font-weight:500;color:var(--ink);border-radius:8px;transition:background .2s ease,color .2s ease}
+.nav-link:hover,.nav-link.active{background:var(--surface);color:var(--green)}
+.nav-cta{margin-left:8px;background:var(--green);color:var(--white);padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s ease,transform .2s ease}
+.nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;transition:transform .3s var(--ease),opacity .2s ease}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(15,35,64,.4);z-index:998;opacity:0;transition:opacity .3s ease}
+.nav-overlay.open{display:block;opacity:1}
+
+.page-hero{position:relative;padding:150px 0 70px;background:linear-gradient(180deg,var(--surface) 0%,var(--white) 100%);overflow:hidden}
+.page-hero-diag{position:absolute;top:0;right:0;width:40%;height:100%;background:var(--navy);clip-path:polygon(45% 0,100% 0,100% 100%,20% 100%);z-index:0;opacity:.05}
+.page-hero-inner{position:relative;z-index:1;max-width:680px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--green)}
+.page-hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.2vw,48px);line-height:1.15;color:var(--navy);margin-bottom:16px}
+.page-hero p{font-size:16px;color:var(--text)}
+
+section{padding:90px 0}
+
+/* Liste actus */
+#list-view.hidden, #detail-view.hidden{display:none}
+.actus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.actu-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.actu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.actu-media{aspect-ratio:16/10;overflow:hidden;background:var(--surface)}
+.actu-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.actu-card:hover .actu-media img{transform:scale(1.06)}
+.actu-body{padding:22px}
+.actu-date{font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--green)}
+.actu-body h3{font-family:var(--disp);font-weight:600;font-size:18px;color:var(--navy);margin:10px 0 8px;line-height:1.35}
+.actu-body p{font-size:13.5px;color:var(--text)}
+.actu-readmore{margin-top:14px;font-size:13px;font-weight:600;color:var(--navy)}
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);font-size:15px}
+
+/* Vue détail */
+.detail-back{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:28px;cursor:pointer}
+.detail-date{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:block}
+.detail-title{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4vw,38px);color:var(--navy);line-height:1.2;margin-bottom:26px}
+.detail-media{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:32px}
+.detail-media img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.detail-body{font-size:16px;color:var(--text);line-height:1.85;white-space:pre-line}
+
+/* Barre d'actions fin de lecture */
+.action-bar{margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
+.action-bar-title{font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:18px;font-weight:600}
+.action-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.action-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:10px;font-size:13.5px;font-weight:600;border:1.5px solid var(--line);color:var(--navy);background:var(--white);transition:transform .2s var(--ease),box-shadow .2s ease,border-color .2s ease}
+.action-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.action-btn svg{width:18px;height:18px}
+.action-btn.gallery{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.action-btn.gallery:hover{background:var(--navy-dark)}
+.action-btn.whatsapp:hover{border-color:#25D366;color:#25D366}
+.action-btn.facebook:hover{border-color:#1877F2;color:#1877F2}
+.action-btn.copy.copied{background:var(--green);color:var(--white);border-color:var(--green)}
+.action-btn.support{background:var(--gold);color:var(--white);border-color:var(--gold)}
+.action-btn.support:hover{background:#B3823C}
+
+.cta-don{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);position:relative;overflow:hidden}
+.cta-don::before{content:"";position:absolute;top:-40%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%)}
+.cta-box{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
+.cta-box h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.4vw,34px);max-width:560px;line-height:1.25}
+.cta-box p{color:rgba(255,255,255,.8);margin-top:10px;max-width:480px;font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:9px;font-size:14.5px;font-weight:600;transition:transform .2s var(--ease),background .2s ease}
+.btn-primary{background:var(--white);color:var(--green-dark)}
+.btn-primary:hover{background:var(--surface);transform:translateY(-2px)}
+
+footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr .9fr;gap:48px;padding-bottom:44px}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand img{height:38px}
+.footer-brand span{font-family:var(--disp);font-weight:700;font-size:16px}
+.footer-col p{font-size:13.5px;color:rgba(255,255,255,.6);max-width:280px;line-height:1.75}
+.footer-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:16px;font-weight:700}
+.footer-links{display:grid;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.72)}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:rgba(255,255,255,.45)}
+.footer-bottom a{color:rgba(255,255,255,.45)}
+
+.back-top{position:fixed;right:24px;bottom:24px;z-index:500;width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:var(--white);box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s var(--ease);border:none}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy-dark);color:var(--white);padding:14px 24px;border-radius:10px;font-size:13.5px;font-weight:500;box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transition:.3s var(--ease);z-index:3000}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:1000px){
+  .actus-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .cta-box{flex-direction:column;text-align:center}
+}
+@media(max-width:680px){
+  nav{position:fixed;top:0;right:0;width:min(320px,86vw);height:100svh;background:var(--white);flex-direction:column;align-items:stretch;padding:100px 24px 30px;gap:4px;transform:translateX(105%);transition:transform .4s var(--ease);box-shadow:-16px 0 50px rgba(0,0,0,.12)}
+  nav.open{transform:translateX(0)}
+  .menu-btn{display:block}
+  .nav-cta{margin-left:0;text-align:center}
+  section{padding:64px 0}
+  .actus-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .action-buttons{flex-direction:column}
+  .action-btn{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="logo.png" alt="SNA-ONG"><span class="brand-name">SNA-ONG</span></a>
+    <nav id="nav-menu">
+      <a href="a-propos.html" class="nav-link">À propos</a>
+      <a href="statuts.html" class="nav-link">Statuts</a>
+      <a href="equipe.html" class="nav-link">Équipe</a>
+      <a href="actualites.html" class="nav-link active">Actualités</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="don.html" class="nav-cta">Faire un don</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<!-- VUE LISTE -->
+<div id="list-view">
+  <section class="page-hero">
+    <div class="page-hero-diag"></div>
+    <div class="container page-hero-inner reveal">
+      <span class="eyebrow">Sur le terrain</span>
+      <h1>Actualités</h1>
+      <p>Suivez les projets et actions récentes de SNA-ONG à Djougou et dans la Donga.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="actus-grid reveal" id="actus-grid">
+        <div class="empty-state">Chargement des actualités…</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- VUE DÉTAIL -->
+<div id="detail-view" class="hidden">
+  <section class="page-hero" style="padding-bottom:0">
+    <div class="page-hero-diag"></div>
+    <div class="container narrow reveal visible" style="position:relative;z-index:1">
+      <span class="detail-back" id="detail-back">← Toutes les actualités</span>
+      <span class="detail-date" id="detail-date">—</span>
+      <h1 class="detail-title" id="detail-title">—</h1>
+    </div>
+  </section>
+  <section style="padding-top:40px">
+    <div class="container narrow">
+      <div class="detail-media"><img id="detail-image" src="" alt=""></div>
+      <div class="detail-body" id="detail-content">—</div>
+
+      <div class="action-bar">
+        <div class="action-bar-title">Partager &amp; aller plus loin</div>
+        <div class="action-buttons">
+          <a class="action-btn gallery" id="btn-gallery" href="galerie.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Voir la galerie de cette actualité
+          </a>
+          <a class="action-btn support" id="btn-support" href="don.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
+            Soutenir cette action
+          </a>
+          <a class="action-btn whatsapp" id="btn-whatsapp" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.1 7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.4.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2z"/></svg>
+            WhatsApp
+          </a>
+          <a class="action-btn facebook" id="btn-facebook" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l.5-4H13V6.5c0-1.2.3-2 2-2h1.9V1.1C16.6 1 15.4.9 14.1.9 11.2.9 9.5 2.7 9.5 6.1V9H6.5v4H9.5v9H13z"/></svg>
+            Facebook
+          </a>
+          <button class="action-btn copy" id="btn-copy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <span id="copy-label">Copier le lien</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="cta-don">
+  <div class="container cta-box">
+    <div>
+      <h2>Votre soutien change une vie, une goutte d'eau, un chant à la fois</h2>
+      <p>Chaque don contribue directement aux actions de SNA-ONG à Djougou et dans la Donga.</p>
+    </div>
+    <a href="don.html" class="btn btn-primary">Faire un don</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><img src="logo.png" alt="SNA-ONG"><span>SNA-ONG</span></div>
+        <p>Sud-Nord Actions ONG — culture, santé, éducation, droits humains et eau à Djougou, Bénin, depuis 1997.</p>
+      </div>
+      <div class="footer-col"><h4 class="footer-title">Navigation</h4><ul class="footer-links"><li><a href="a-propos.html">À propos</a></li><li><a href="statuts.html">Statuts</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="actualites.html">Actualités</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Explorer</h4><ul class="footer-links"><li><a href="galerie.html">Galerie</a></li><li><a href="don.html">Faire un don</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Contact</h4><ul class="footer-links"><li><a href="mailto:snaong2000@yahoo.fr">snaong2000@yahoo.fr</a></li><li><a href="tel:+22997643716">(+229) 97 64 37 16</a></li><li>Quartier Gah, BP 193, Djougou</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> SNA-ONG — Sud-Nord Actions. Tous droits réservés.</span>
+      <a href="https://wa.me/2290191175358" target="_blank" rel="noopener">Site conçu par DineTech</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+<div class="toast" id="toast">Lien copié dans le presse-papier</div>
+
+<script>
+(() => {
+  "use strict";
+  const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSMFnO43ctZMNrTQN2GWTwCxbKGE7yTtAN-Ryv35dBLV174GkOj64TeOHNJTDmpf1mHqwUdo9acz4oj/pub?gid=2026034436&single=true&output=csv";
+
+  const FALLBACK = [
+    {titre:"Musiques et danses traditionnelles à l'honneur", date:"2019 — 2020", contenu:"Dans le cadre du programme RePaSOC financé par l'Union Européenne, SNA-ONG a mené une vaste action de promotion et de valorisation des groupes de musiques et de danses traditionnelles dans les communes de Djougou, Copargo, Ouaké et Bassila, au cœur du département de la Donga.\n\nCe projet a permis de recenser, former et accompagner de nombreux groupes culturels locaux, contribuant ainsi à la sauvegarde du patrimoine immatériel de la région tout en générant des revenus pour les artistes impliqués.", image:"hero.png", slug:"musiques-danses-2020"},
+    {titre:"Eau potable pour deux écoles de Natitingou", date:"2021", contenu:"SNA-ONG a réalisé des ouvrages d'accès à l'eau potable et à l'assainissement dans deux écoles primaires publiques de Natitingou, améliorant durablement les conditions d'hygiène et de scolarisation des élèves.", image:"hero.png", slug:"eau-natitingou-2021"},
+    {titre:"Extension du réseau d'eau vers Salangawa", date:"2020", contenu:"Extension de l'adduction d'eau villageoise (AEV) d'Assodé-Alayomdé vers la commune de Ouaké, permettant à de nouveaux foyers d'accéder à l'eau potable.", image:"hero.png", slug:"eau-ouake-2020"}
+  ];
+
+  function parseCSV(text){
+    const rows = [];
+    let row = [], field = '', inQuotes = false;
+    for(let i=0;i<text.length;i++){
+      const c = text[i], next = text[i+1];
+      if(inQuotes){
+        if(c === '"' && next === '"'){ field += '"'; i++; }
+        else if(c === '"'){ inQuotes = false; }
+        else field += c;
+      } else {
+        if(c === '"') inQuotes = true;
+        else if(c === ','){ row.push(field); field=''; }
+        else if(c === '\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+        else if(c === '\r'){ }
+        else field += c;
+      }
+    }
+    if(field.length || row.length){ row.push(field); rows.push(row); }
+    return rows.filter(r => r.some(v => v.trim() !== ''));
+  }
+
+  function csvToActus(text){
+    const rows = parseCSV(text);
+    if(rows.length < 2) return null;
+    const headers = rows[0].map(h => h.trim().toLowerCase());
+    const idx = {titre:headers.indexOf('titre'),date:headers.indexOf('date'),contenu:headers.indexOf('contenu'),image:headers.indexOf('image'),slug:headers.indexOf('slug')};
+    if(idx.titre === -1 || idx.slug === -1) return null;
+    return rows.slice(1).map(r => ({
+      titre:(r[idx.titre]||'').trim(),
+      date:(r[idx.date]||'').trim(),
+      contenu:(r[idx.contenu]||'').trim(),
+      image:(r[idx.image]||'').trim(),
+      slug:(r[idx.slug]||'').trim()
+    })).filter(a => a.titre && a.slug);
+  }
+
+  function resume(text, len){
+    if(!text) return '';
+    return text.length > len ? text.slice(0,len).trim() + '…' : text;
+  }
+
+  let ACTUS = [];
+
+  function renderList(){
+    const grid = document.getElementById('actus-grid');
+    if(!ACTUS.length){
+      grid.innerHTML = '<div class="empty-state">Aucune actualité pour le moment. Revenez bientôt !</div>';
+      return;
+    }
+    grid.innerHTML = ACTUS.map(a => `
+      <div class="actu-card" data-slug="${a.slug}">
+        <div class="actu-media"><img src="${a.image || 'hero.png'}" alt="${a.titre}" loading="lazy"></div>
+        <div class="actu-body">
+          <span class="actu-date">${a.date}</span>
+          <h3>${a.titre}</h3>
+          <p>${resume(a.contenu, 110)}</p>
+          <div class="actu-readmore">Lire la suite →</div>
+        </div>
+      </div>`).join('');
+    grid.querySelectorAll('.actu-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const slug = card.dataset.slug;
+        history.pushState({}, '', `actualites.html?slug=${encodeURIComponent(slug)}`);
+        showDetail(slug);
+      });
+    });
+  }
+
+  function updateSEO(actu){
+    const title = `${actu.titre} — SNA-ONG`;
+    const desc = resume(actu.contenu, 155);
+    const url = `https://snaong.org/actualites.html?slug=${encodeURIComponent(actu.slug)}`;
+    document.getElementById('page-title').textContent = title;
+    document.getElementById('meta-desc').setAttribute('content', desc);
+    document.getElementById('canonical-link').setAttribute('href', url);
+    document.getElementById('og-title').setAttribute('content', title);
+    document.getElementById('og-desc').setAttribute('content', desc);
+    document.getElementById('og-image').setAttribute('content', actu.image ? (actu.image.startsWith('http') ? actu.image : `https://snaong.org/${actu.image}`) : 'https://snaong.org/hero.png');
+    document.getElementById('og-url').setAttribute('content', url);
+  }
+  function resetSEO(){
+    document.getElementById('page-title').textContent = 'Actualités — SNA-ONG | Sud-Nord Actions';
+    document.getElementById('meta-desc').setAttribute('content', "Suivez les actualités et projets de terrain de Sud-Nord Actions ONG à Djougou : culture, santé, éducation, droits humains et eau.");
+    document.getElementById('canonical-link').setAttribute('href', 'https://snaong.org/actualites.html');
+    document.getElementById('og-title').setAttribute('content', 'Actualités — SNA-ONG');
+    document.getElementById('og-desc').setAttribute('content', "Suivez les projets de terrain de Sud-Nord Actions ONG à Djougou, Bénin.");
+    document.getElementById('og-image').setAttribute('content', 'https://snaong.org/hero.png');
+    document.getElementById('og-url').setAttribute('content', 'https://snaong.org/actualites.html');
+  }
+
+  function showDetail(slug){
+    const actu = ACTUS.find(a => a.slug === slug);
+    if(!actu){ showList(); return; }
+    document.getElementById('list-view').classList.add('hidden');
+    document.getElementById('detail-view').classList.remove('hidden');
+    document.getElementById('detail-date').textContent = actu.date;
+    document.getElementById('detail-title').textContent = actu.titre;
+    document.getElementById('detail-image').src = actu.image || 'hero.png';
+    document.getElementById('detail-image').alt = actu.titre;
+    document.getElementById('detail-content').textContent = actu.contenu;
+    document.getElementById('btn-gallery').href = `galerie.html?slug=${encodeURIComponent(actu.slug)}`;
+
+    const shareUrl = `https://snaong.org/actualites.html?slug=${encodeURIComponent(actu.slug)}`;
+    document.getElementById('btn-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(actu.titre + ' — ' + shareUrl)}`;
+    document.getElementById('btn-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+    document.getElementById('btn-copy').onclick = () => {
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        const btn = document.getElementById('btn-copy');
+        const label = document.getElementById('copy-label');
+        btn.classList.add('copied');
+        label.textContent = 'Lien copié ✓';
+        showToast('Lien copié dans le presse-papier');
+        setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copier le lien'; }, 2200);
+      });
+    };
+
+    updateSEO(actu);
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+
+  function showList(){
+    document.getElementById('detail-view').classList.add('hidden');
+    document.getElementById('list-view').classList.remove('hidden');
+    resetSEO();
+  }
+
+  document.getElementById('detail-back').addEventListener('click', () => {
+    history.pushState({}, '', 'actualites.html');
+    showList();
+  });
+
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  function init(){
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+    if(slug) showDetail(slug); else showList();
+  }
+
+  fetch(SHEET_CSV_URL)
+    .then(r => { if(!r.ok) throw new Error('fetch failed'); return r.text(); })
+    .then(text => {
+      const actus = csvToActus(text);
+      ACTUS = (actus && actus.length) ? actus : FALLBACK;
+      renderList();
+      init();
+    })
+    .catch(() => { ACTUS = FALLBACK; renderList(); init(); });
+
+  window.addEventListener('popstate', () => {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+    if(slug) showDetail(slug); else showList();
+  });
+
+  /* Header / menu / back-top communs */
+  const header = document.getElementById('site-header');
+  const backTop = document.getElementById('backTop');
+  function onScroll(){
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 30);
+    backTop.classList.toggle('show', y > 500);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const navOverlay = document.getElementById('nav-overlay');
+  function closeMenu(){
+    navMenu.classList.remove('open'); menuBtn.classList.remove('open'); navOverlay.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Ouvrir le menu');
+  }
+  function toggleMenu(){
+    const opened = navMenu.classList.toggle('open');
+    menuBtn.classList.toggle('open', opened); navOverlay.classList.toggle('open', opened);
+    menuBtn.setAttribute('aria-expanded', opened); menuBtn.setAttribute('aria-label', opened ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  menuBtn.addEventListener('click', toggleMenu);
+  navOverlay.addEventListener('click', closeMenu);
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+  backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el => io.observe(el));
+})();
+</script>
+
+</body>
+</html>
