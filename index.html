@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNA-ONG — Sud-Nord Actions | Culture, santé, eau et développement au Bénin</title>
+<meta name="description" content="Depuis 1997, Sud-Nord Actions ONG (SNA-ONG) agit à Djougou pour la culture traditionnelle, la santé communautaire, l'éducation, les droits humains et l'eau au Bénin.">
+<meta name="keywords" content="SNA ONG, Sud Nord Actions, ONG Bénin, ONG Djougou, ONG Donga, développement communautaire, culture traditionnelle Bénin, santé communautaire, eau hygiène assainissement, droits humains enfant">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://snaong.org/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BJ">
+<meta property="og:site_name" content="SNA-ONG">
+<meta property="og:title" content="SNA-ONG — Sud-Nord Actions">
+<meta property="og:description" content="27 ans d'action à Djougou pour la culture, la santé, l'éducation, les droits humains et l'eau.">
+<meta property="og:url" content="https://snaong.org/">
+<meta property="og:image" content="https://snaong.org/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SNA-ONG — Sud-Nord Actions">
+<meta name="twitter:description" content="ONG béninoise engagée depuis 1997 pour le développement communautaire à Djougou.">
+<meta name="twitter:image" content="https://snaong.org/hero.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preload" as="image" href="hero.png" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Sud-Nord Actions",
+  "alternateName": ["SNA-ONG", "SNA"],
+  "url": "https://snaong.org/",
+  "logo": "https://snaong.org/logo.png",
+  "image": "https://snaong.org/hero.png",
+  "foundingDate": "1997-01-03",
+  "description": "ONG béninoise engagée dans la culture traditionnelle, la santé communautaire, l'éducation, les droits humains et l'eau, l'hygiène et l'environnement.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Quartier Gah, Carré H, Lot 139, Maison Mamam",
+    "addressLocality": "Djougou",
+    "addressRegion": "Donga",
+    "addressCountry": "BJ"
+  },
+  "areaServed": { "@type": "Country", "name": "Bénin" },
+  "email": "snaong2000@yahoo.fr",
+  "telephone": "+22997643716"
+}
+</script>
+<style>
+:root{
+  --navy:#1B3A5C;
+  --navy-dark:#0F2340;
+  --green:#2E7D4F;
+  --green-dark:#1F5C38;
+  --gold:#C9974C;
+  --ink:#1C1F26;
+  --text:#4B5563;
+  --muted:#7A8590;
+  --white:#FFFFFF;
+  --surface:#F5F7F9;
+  --line:rgba(27,58,92,.1);
+  --shadow-sm:0 6px 18px rgba(15,35,64,.08);
+  --shadow-md:0 16px 40px rgba(15,35,64,.12);
+  --radius:14px;
+  --disp:'Playfair Display',serif;
+  --body:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,.8,.25,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--green);color:var(--white)}
+.container{width:min(1200px,calc(100% - 48px));margin-inline:auto}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;height:82px;display:flex;align-items:center;transition:background .3s var(--ease),box-shadow .3s var(--ease),height .3s var(--ease)}
+header.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);height:70px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:42px;transition:height .3s ease}
+header.scrolled .brand img{height:36px}
+.brand-name{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--navy)}
+nav{display:flex;align-items:center;gap:6px}
+.nav-link{padding:10px 16px;font-size:14px;font-weight:500;color:var(--ink);border-radius:8px;transition:background .2s ease,color .2s ease}
+.nav-link:hover{background:var(--surface);color:var(--green)}
+.nav-cta{margin-left:8px;background:var(--green);color:var(--white);padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s ease,transform .2s ease}
+.nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;transition:transform .3s var(--ease),opacity .2s ease}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(15,35,64,.4);z-index:998;opacity:0;transition:opacity .3s ease}
+.nav-overlay.open{display:block;opacity:1}
+
+/* Hero — taille raisonnable */
+.hero{position:relative;padding:150px 0 90px;background:linear-gradient(180deg,var(--surface) 0%,var(--white) 100%);overflow:hidden}
+.hero-diag{position:absolute;top:0;right:0;width:45%;height:100%;background:var(--navy);clip-path:polygon(38% 0,100% 0,100% 100%,12% 100%);z-index:0;opacity:.05}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:18px}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--green)}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.16;color:var(--navy);letter-spacing:-.01em;margin-bottom:20px}
+.hero h1 span{color:var(--green);font-style:italic}
+.hero p.lead{font-size:16.5px;color:var(--text);max-width:480px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:9px;font-size:14.5px;font-weight:600;transition:transform .2s var(--ease),background .2s ease,box-shadow .2s ease}
+.btn-primary{background:var(--green);color:var(--white);box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-outline{border:1.5px solid var(--line);color:var(--navy)}
+.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+.hero-media{position:relative}
+.hero-media .frame{position:absolute;inset:16px -16px -16px 16px;border:2px solid var(--gold);border-radius:var(--radius);z-index:0}
+.hero-media img{position:relative;z-index:1;width:100%;aspect-ratio:4/3.2;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md)}
+.hero-badge{position:absolute;z-index:2;bottom:-22px;left:-22px;background:var(--white);border-radius:12px;padding:16px 20px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px}
+.hero-badge .num{font-family:var(--disp);font-weight:700;font-size:28px;color:var(--green)}
+.hero-badge .lbl{font-size:11.5px;color:var(--muted);line-height:1.3;max-width:110px}
+
+/* Stats strip */
+.stats{background:var(--navy);padding:52px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat{text-align:center;border-right:1px solid rgba(255,255,255,.12);padding:0 12px}
+.stat:last-child{border-right:none}
+.stat-num{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.2vw,38px);color:var(--white)}
+.stat-label{font-size:12.5px;color:rgba(255,255,255,.65);margin-top:6px}
+
+section{padding:100px 0}
+.section-head{max-width:600px;margin:0 auto 56px;text-align:center}
+.section-head.left{margin:0 0 56px;text-align:left}
+.section-head .eyebrow{justify-content:center}
+.section-head.left .eyebrow{justify-content:flex-start}
+.section-head h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.4vw,38px);color:var(--navy);line-height:1.2}
+.section-head p{margin-top:14px;color:var(--text);font-size:15.5px}
+
+/* 5 domaines */
+.domaines-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.domaine{background:var(--surface);border-radius:var(--radius);padding:30px 22px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.domaine:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);background:var(--white)}
+.domaine-icon{width:44px;height:44px;border-radius:10px;background:var(--green);color:var(--white);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.domaine-icon svg{width:22px;height:22px}
+.domaine:nth-child(2) .domaine-icon{background:var(--navy)}
+.domaine:nth-child(3) .domaine-icon{background:var(--gold)}
+.domaine:nth-child(4) .domaine-icon{background:#B8543F}
+.domaine:nth-child(5) .domaine-icon{background:#3B7FA6}
+.domaine h3{font-family:var(--disp);font-weight:600;font-size:16.5px;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.domaine p{font-size:13px;color:var(--text);line-height:1.6}
+
+/* Propos */
+.propos{background:var(--surface)}
+.propos-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.propos-media{position:relative}
+.propos-media img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md)}
+.propos-text .eyebrow{margin-bottom:16px}
+.propos-text p.lead{font-family:var(--disp);font-size:20px;color:var(--navy);line-height:1.5;font-weight:600;margin-bottom:18px}
+.propos-text p.body{font-size:15px;color:var(--text);margin-bottom:14px}
+.propos-quote{border-left:3px solid var(--gold);padding-left:18px;margin:24px 0;font-style:italic;color:var(--navy);font-size:14.5px}
+.propos-link{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;color:var(--green);font-size:14.5px}
+.propos-link:hover{gap:12px}
+
+/* Actus */
+.actus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.actu-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.actu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.actu-media{aspect-ratio:16/10;overflow:hidden}
+.actu-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.actu-card:hover .actu-media img{transform:scale(1.06)}
+.actu-body{padding:22px}
+.actu-date{font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--green)}
+.actu-body h3{font-family:var(--disp);font-weight:600;font-size:17px;color:var(--navy);margin:10px 0 8px;line-height:1.35}
+.actu-body p{font-size:13.5px;color:var(--text)}
+.actus-foot{text-align:center;margin-top:44px}
+
+/* CTA don */
+.cta-don{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);position:relative;overflow:hidden}
+.cta-don::before{content:"";position:absolute;top:-40%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%)}
+.cta-box{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
+.cta-box h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.4vw,34px);max-width:560px;line-height:1.25}
+.cta-box p{color:rgba(255,255,255,.8);margin-top:10px;max-width:480px;font-size:15px}
+.cta-don .btn-primary{background:var(--white);color:var(--green-dark);flex-shrink:0}
+.cta-don .btn-primary:hover{background:var(--surface)}
+
+/* Footer */
+footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr .9fr;gap:48px;padding-bottom:44px}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand img{height:38px}
+.footer-brand span{font-family:var(--disp);font-weight:700;font-size:16px}
+.footer-col p{font-size:13.5px;color:rgba(255,255,255,.6);max-width:280px;line-height:1.75}
+.footer-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:16px;font-weight:700}
+.footer-links{display:grid;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.72);transition:color .2s ease}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:rgba(255,255,255,.45)}
+.footer-bottom a{color:rgba(255,255,255,.45)}
+.footer-bottom a:hover{color:var(--white)}
+
+.back-top{position:fixed;right:24px;bottom:24px;z-index:500;width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:var(--white);box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s var(--ease);border:none;cursor:pointer}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-top:hover{background:var(--green-dark)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .hero-media{order:-1;max-width:420px;margin:0 auto}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+  .stat:nth-child(odd){border-right:1px solid rgba(255,255,255,.12)}
+  .stat:nth-child(even){border-right:none}
+  .domaines-grid{grid-template-columns:repeat(2,1fr)}
+  .propos-grid{grid-template-columns:1fr;gap:40px}
+  .actus-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .cta-box{flex-direction:column;text-align:center}
+}
+@media(max-width:680px){
+  nav{position:fixed;top:0;right:0;width:min(320px,86vw);height:100svh;background:var(--white);flex-direction:column;align-items:stretch;padding:100px 24px 30px;gap:4px;transform:translateX(105%);transition:transform .4s var(--ease);box-shadow:-16px 0 50px rgba(0,0,0,.12)}
+  nav.open{transform:translateX(0)}
+  .menu-btn{display:block}
+  .nav-cta{margin-left:0;text-align:center}
+  section{padding:70px 0}
+  .domaines-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="logo.png" alt="SNA-ONG"><span class="brand-name">SNA-ONG</span></a>
+    <nav id="nav-menu">
+      <a href="a-propos.html" class="nav-link">À propos</a>
+      <a href="statuts.html" class="nav-link">Statuts</a>
+      <a href="equipe.html" class="nav-link">Équipe</a>
+      <a href="actualites.html" class="nav-link">Actualités</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="don.html" class="nav-cta">Faire un don</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<section class="hero">
+  <div class="hero-diag"></div>
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <span class="eyebrow">Djougou · Donga · Bénin — depuis 1997</span>
+      <h1>Relier le Sud et le Nord par l'action <span>communautaire</span></h1>
+      <p class="lead">Culture traditionnelle, santé, éducation, droits humains et eau : SNA-ONG accompagne durablement les communautés de la Donga.</p>
+      <div class="hero-actions">
+        <a href="a-propos.html" class="btn btn-primary">Découvrir nos actions</a>
+        <a href="don.html" class="btn btn-outline">Faire un don</a>
+      </div>
+    </div>
+    <div class="hero-media reveal">
+      <div class="frame"></div>
+      <img src="hero.png" alt="Équipe et bénéficiaires SNA-ONG, promotion des danses traditionnelles, Djougou">
+      <div class="hero-badge"><span class="num">27+</span><span class="lbl">ans d'action de terrain, depuis 1997</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats reveal">
+  <div class="container stats-grid">
+    <div class="stat"><div class="stat-num" data-count="27">0</div><div class="stat-label">ans d'engagement</div></div>
+    <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">domaines d'action</div></div>
+    <div class="stat"><div class="stat-num" data-count="4">0</div><div class="stat-label">communes couvertes</div></div>
+    <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">partenaires institutionnels</div></div>
+  </div>
+</div>
+
+<section class="domaines-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nos domaines d'action</span>
+      <h2>Cinq axes, une même mission</h2>
+      <p>Conformément à ses statuts, SNA-ONG déploie son action autour de cinq domaines complémentaires.</p>
+    </div>
+    <div class="domaines-grid reveal">
+      <div class="domaine">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V6l7 3.5v9"/><path d="M9 6L4 8.5v9L9 20"/></svg></div>
+        <h3>Culture &amp; tourisme solidaire</h3>
+        <p>Sauvegarde et promotion du patrimoine culturel traditionnel béninois.</p>
+      </div>
+      <div class="domaine">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 3.5 1.2 4 2.5C10.5 5.2 12 4 14 4c4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg></div>
+        <h3>Santé communautaire &amp; nutrition</h3>
+        <p>Actions de santé de base et de nutrition au plus près des familles.</p>
+      </div>
+      <div class="domaine">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></div>
+        <h3>Éducation &amp; insertion pro</h3>
+        <p>Formation, scolarisation et insertion professionnelle des jeunes.</p>
+      </div>
+      <div class="domaine">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <h3>Droits humains &amp; protection de l'enfant</h3>
+        <p>Défense des droits humains et protection de l'enfance.</p>
+      </div>
+      <div class="domaine">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 5 10 5 15a7 7 0 0014 0c0-5-7-13-7-13z"/></svg></div>
+        <h3>Eau, hygiène &amp; environnement</h3>
+        <p>Accès à l'eau potable, assainissement et protection de l'environnement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="propos">
+  <div class="container propos-grid">
+    <div class="propos-media reveal">
+      <img src="hero.png" alt="Activités de terrain de SNA-ONG">
+    </div>
+    <div class="propos-text reveal">
+      <span class="eyebrow">Qui sommes-nous</span>
+      <p class="lead">Née le 3 janvier 1997 du volontariat de jeunes béninois et français, Sud-Nord Actions relie deux mondes que son nom porte déjà.</p>
+      <p class="body">Enregistrée sous le récépissé n°2000/168/MISAT, l'ONG vise à être une référence nationale, sous-régionale et internationale dans l'accompagnement des communautés à la base.</p>
+      <blockquote class="propos-quote">« Le patrimoine culturel est non seulement un instrument de paix et de réconciliation, mais aussi un facteur de développement. » — UNESCO</blockquote>
+      <a href="a-propos.html" class="propos-link">Notre histoire complète →</a>
+    </div>
+  </div>
+</section>
+
+<section class="actus-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Sur le terrain</span>
+      <h2>Actualités récentes</h2>
+    </div>
+    <div class="actus-grid reveal">
+      <a href="actualites.html" class="actu-card">
+        <div class="actu-media"><img src="hero.png" alt="Musiques et danses traditionnelles"></div>
+        <div class="actu-body"><span class="actu-date">2019 — 2020</span><h3>Musiques et danses traditionnelles à l'honneur</h3><p>Programme RePaSOC/UE à Djougou, Copargo, Ouaké et Bassila.</p></div>
+      </a>
+      <a href="actualites.html" class="actu-card">
+        <div class="actu-media"><img src="hero.png" alt="Eau potable Natitingou"></div>
+        <div class="actu-body"><span class="actu-date">2021</span><h3>Eau potable pour deux écoles de Natitingou</h3><p>Ouvrages d'accès à l'eau et à l'assainissement en milieu scolaire.</p></div>
+      </a>
+      <a href="actualites.html" class="actu-card">
+        <div class="actu-media"><img src="hero.png" alt="Extension réseau eau Ouaké"></div>
+        <div class="actu-body"><span class="actu-date">2020</span><h3>Extension du réseau d'eau vers Salangawa</h3><p>Extension de l'AEV d'Assodé-Alayomdé vers la commune de Ouaké.</p></div>
+      </a>
+    </div>
+    <div class="actus-foot"><a href="actualites.html" class="btn btn-outline">Toutes les actualités</a></div>
+  </div>
+</section>
+
+<section class="cta-don">
+  <div class="container cta-box">
+    <div>
+      <h2>Votre soutien change une vie, une goutte d'eau, un chant à la fois</h2>
+      <p>Chaque don contribue directement aux actions de SNA-ONG à Djougou et dans la Donga.</p>
+    </div>
+    <a href="don.html" class="btn btn-primary">Faire un don</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><img src="logo.png" alt="SNA-ONG"><span>SNA-ONG</span></div>
+        <p>Sud-Nord Actions ONG — culture, santé, éducation, droits humains et eau à Djougou, Bénin, depuis 1997.</p>
+      </div>
+      <div class="footer-col"><h4 class="footer-title">Navigation</h4><ul class="footer-links"><li><a href="a-propos.html">À propos</a></li><li><a href="statuts.html">Statuts</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="actualites.html">Actualités</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Explorer</h4><ul class="footer-links"><li><a href="galerie.html">Galerie</a></li><li><a href="don.html">Faire un don</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Contact</h4><ul class="footer-links"><li><a href="mailto:snaong2000@yahoo.fr">snaong2000@yahoo.fr</a></li><li><a href="tel:+22997643716">(+229) 97 64 37 16</a></li><li>Quartier Gah, BP 193, Djougou</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> SNA-ONG — Sud-Nord Actions. Tous droits réservés.</span>
+      <a href="https://wa.me/2290191175358" target="_blank" rel="noopener">Site conçu par DineTech</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+
+<script>
+(() => {
+  "use strict";
+  const header = document.getElementById('site-header');
+  const backTop = document.getElementById('backTop');
+  function onScroll(){
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 30);
+    backTop.classList.toggle('show', y > 500);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const navOverlay = document.getElementById('nav-overlay');
+
+  function closeMenu(){
+    navMenu.classList.remove('open');
+    menuBtn.classList.remove('open');
+    navOverlay.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.setAttribute('aria-label','Ouvrir le menu');
+  }
+  function toggleMenu(){
+    const opened = navMenu.classList.toggle('open');
+    menuBtn.classList.toggle('open', opened);
+    navOverlay.classList.toggle('open', opened);
+    menuBtn.setAttribute('aria-expanded', opened);
+    menuBtn.setAttribute('aria-label', opened ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  menuBtn.addEventListener('click', toggleMenu);
+  navOverlay.addEventListener('click', closeMenu);
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+
+  backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el => io.observe(el));
+
+  const counters = document.querySelectorAll('.stat-num');
+  let started = false;
+  const cio = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting && !started){
+      started = true;
+      counters.forEach(el => {
+        const target = parseInt(el.dataset.count,10);
+        const duration = 1300;
+        const start = performance.now();
+        function update(now){
+          const p = Math.min((now-start)/duration,1);
+          const eased = 1 - Math.pow(1-p,4);
+          el.textContent = Math.floor(target*eased);
+          if(p<1) requestAnimationFrame(update); else el.textContent = target;
+        }
+        requestAnimationFrame(update);
+      });
+      cio.disconnect();
+    }
+  }, {threshold:.4});
+  cio.observe(document.querySelector('.stats'));
+})();
+</script>
+
+</body>
+</html>
