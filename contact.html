@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — SNA-ONG | Sud-Nord Actions, Djougou</title>
+<meta name="description" content="Contactez Sud-Nord Actions ONG à Djougou, Bénin. Adresse, téléphone, email et formulaire de contact.">
+<link rel="canonical" href="https://snaong.org/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — SNA-ONG">
+<meta property="og:description" content="Contactez Sud-Nord Actions ONG à Djougou, Bénin.">
+<meta property="og:image" content="https://snaong.org/hero.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Sud-Nord Actions",
+  "email": "snaong2000@yahoo.fr",
+  "telephone": "+22997643716",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Quartier Gah, Carré H, Lot 139, Maison Mamam",
+    "addressLocality": "Djougou",
+    "addressRegion": "Donga",
+    "addressCountry": "BJ"
+  }
+}
+</script>
+<style>
+:root{
+  --navy:#1B3A5C; --navy-dark:#0F2340; --green:#2E7D4F; --green-dark:#1F5C38;
+  --gold:#C9974C; --ink:#1C1F26; --text:#4B5563; --muted:#7A8590;
+  --white:#FFFFFF; --surface:#F5F7F9; --line:rgba(27,58,92,.1);
+  --shadow-sm:0 6px 18px rgba(15,35,64,.08); --shadow-md:0 16px 40px rgba(15,35,64,.12);
+  --radius:14px; --disp:'Playfair Display',serif; --body:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,.8,.25,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer}
+input,textarea{font:inherit}
+::selection{background:var(--green);color:var(--white)}
+.container{width:min(1200px,calc(100% - 48px));margin-inline:auto}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;height:82px;display:flex;align-items:center;transition:height .3s var(--ease);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+header.scrolled{height:70px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:42px;transition:height .3s ease}
+header.scrolled .brand img{height:36px}
+.brand-name{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--navy)}
+nav{display:flex;align-items:center;gap:6px}
+.nav-link{padding:10px 16px;font-size:14px;font-weight:500;color:var(--ink);border-radius:8px;transition:background .2s ease,color .2s ease}
+.nav-link:hover,.nav-link.active{background:var(--surface);color:var(--green)}
+.nav-cta{margin-left:8px;background:var(--green);color:var(--white);padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s ease,transform .2s ease}
+.nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;transition:transform .3s var(--ease),opacity .2s ease}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(15,35,64,.4);z-index:998;opacity:0;transition:opacity .3s ease}
+.nav-overlay.open{display:block;opacity:1}
+
+.page-hero{position:relative;padding:150px 0 70px;background:linear-gradient(180deg,var(--surface) 0%,var(--white) 100%);overflow:hidden}
+.page-hero-diag{position:absolute;top:0;right:0;width:40%;height:100%;background:var(--navy);clip-path:polygon(45% 0,100% 0,100% 100%,20% 100%);z-index:0;opacity:.05}
+.page-hero-inner{position:relative;z-index:1;max-width:680px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+
+.page-hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.2vw,48px);line-height:1.15;color:var(--navy);margin-bottom:16px}
+.page-hero p{font-size:16px;color:var(--text)}
+
+section{padding:90px 0}
+
+/* Infos cards */
+.infos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:70px}
+.info-card{background:var(--surface);border-radius:var(--radius);padding:28px 24px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.info-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);background:var(--white)}
+.info-icon{width:44px;height:44px;border-radius:10px;background:var(--green);color:var(--white);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.info-card:nth-child(2) .info-icon{background:var(--navy)}
+.info-card:nth-child(3) .info-icon{background:var(--gold)}
+.info-icon svg{width:22px;height:22px}
+.info-card h3{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--navy);margin-bottom:10px}
+.info-card p, .info-card a{font-size:14px;color:var(--text);line-height:1.6;display:block}
+.info-card a:hover{color:var(--green)}
+
+/* Formulaire + preview */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.form-box{background:var(--white)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.form-group input, .form-group textarea{
+  width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:9px;
+  font-size:14.5px;color:var(--ink);background:var(--surface);transition:border-color .2s ease,background .2s ease;
+}
+.form-group input:focus, .form-group textarea:focus{outline:none;border-color:var(--green);background:var(--white)}
+.form-group textarea{resize:vertical;min-height:130px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:9px;font-size:14.5px;font-weight:600;border:none;transition:transform .2s var(--ease),background .2s ease,box-shadow .2s ease}
+.btn-primary{background:var(--green);color:var(--white);box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* Preview email */
+.preview-box{background:var(--surface);border-radius:var(--radius);padding:0;overflow:hidden;border:1px solid var(--line);position:sticky;top:110px}
+.preview-header{background:var(--navy);color:var(--white);padding:14px 20px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.preview-body{padding:26px}
+.preview-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.preview-row .lbl{color:var(--muted);min-width:60px;flex-shrink:0}
+.preview-row .val{color:var(--ink);font-weight:500;word-break:break-word}
+.preview-row .val.placeholder{color:var(--muted);font-style:italic;font-weight:400}
+.preview-message{margin-top:18px;padding-top:4px;font-size:14px;color:var(--text);line-height:1.7;white-space:pre-wrap;min-height:90px}
+.preview-message.placeholder{color:var(--muted);font-style:italic}
+
+/* Carte */
+.map-section{background:var(--surface)}
+.map-frame{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);cursor:pointer}
+.map-frame iframe{width:100%;height:400px;border:0;display:block;pointer-events:none}
+.map-overlay{position:absolute;inset:0;background:rgba(15,35,64,0);display:flex;align-items:center;justify-content:center;transition:background .3s ease}
+.map-frame:hover .map-overlay{background:rgba(15,35,64,.15)}
+.map-badge{background:var(--white);padding:12px 22px;border-radius:30px;font-size:13.5px;font-weight:600;color:var(--navy);box-shadow:var(--shadow-md);opacity:0;transform:translateY(8px);transition:.3s var(--ease);display:flex;align-items:center;gap:8px}
+.map-frame:hover .map-badge{opacity:1;transform:translateY(0)}
+
+.cta-don{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);position:relative;overflow:hidden}
+.cta-don::before{content:"";position:absolute;top:-40%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%)}
+.cta-box{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
+.cta-box h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.4vw,34px);max-width:560px;line-height:1.25}
+.cta-box p{color:rgba(255,255,255,.8);margin-top:10px;max-width:480px;font-size:15px}
+.cta-don .btn-primary{background:var(--white);color:var(--green-dark)}
+.cta-don .btn-primary:hover{background:var(--surface)}
+
+footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr .9fr;gap:48px;padding-bottom:44px}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand img{height:38px}
+.footer-brand span{font-family:var(--disp);font-weight:700;font-size:16px}
+.footer-col p{font-size:13.5px;color:rgba(255,255,255,.6);max-width:280px;line-height:1.75}
+.footer-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:16px;font-weight:700}
+.footer-links{display:grid;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.72)}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:rgba(255,255,255,.45)}
+.footer-bottom a{color:rgba(255,255,255,.45)}
+
+.back-top{position:fixed;right:24px;bottom:24px;z-index:500;width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:var(--white);box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s var(--ease);border:none}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:1000px){
+  .infos-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+  .preview-box{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .cta-box{flex-direction:column;text-align:center}
+}
+@media(max-width:680px){
+  nav{position:fixed;top:0;right:0;width:min(320px,86vw);height:100svh;background:var(--white);flex-direction:column;align-items:stretch;padding:100px 24px 30px;gap:4px;transform:translateX(105%);transition:transform .4s var(--ease);box-shadow:-16px 0 50px rgba(0,0,0,.12)}
+  nav.open{transform:translateX(0)}
+  .menu-btn{display:block}
+  .nav-cta{margin-left:0;text-align:center}
+  section{padding:64px 0}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .map-frame iframe{height:280px}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="logo.png" alt="SNA-ONG"><span class="brand-name">SNA-ONG</span></a>
+    <nav id="nav-menu">
+      <a href="a-propos.html" class="nav-link">À propos</a>
+      <a href="statuts.html" class="nav-link">Statuts</a>
+      <a href="equipe.html" class="nav-link">Équipe</a>
+      <a href="actualites.html" class="nav-link">Actualités</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <a href="don.html" class="nav-cta">Faire un don</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<section class="page-hero">
+  <div class="page-hero-diag"></div>
+  <div class="container page-hero-inner reveal">
+    <span class="eyebrow">Nous contacter</span>
+    <h1>Parlons ensemble</h1>
+    <p>Une question, un partenariat, une envie de vous engager ? L'équipe de SNA-ONG vous répond.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="infos-grid reveal">
+      <div class="info-card">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg></div>
+        <h3>Téléphone</h3>
+        <a href="tel:+22997643716">(+229) 97 64 37 16</a>
+        <a href="tel:+22997644157">(+229) 97 64 41 57</a>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <h3>Email</h3>
+        <a href="mailto:snaong2000@yahoo.fr">snaong2000@yahoo.fr</a>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Adresse</h3>
+        <p>Quartier Gah, Carré H, Lot 139<br>Maison Mamam, BP 193<br>Djougou, Bénin</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="form-box reveal">
+        <span class="eyebrow">Écrivez-nous</span>
+        <h2 style="font-family:var(--disp);font-weight:700;font-size:26px;color:var(--navy);margin-bottom:28px">Envoyer un message</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="f-name">Nom complet</label>
+            <input type="text" id="f-name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" placeholder="vous@exemple.com" required>
+          </div>
+          <div class="form-group">
+            <label for="f-subject">Sujet</label>
+            <input type="text" id="f-subject" placeholder="Objet de votre message" required>
+          </div>
+          <div class="form-group">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" placeholder="Votre message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+            Envoyer par email
+          </button>
+        </form>
+      </div>
+
+      <div class="preview-box reveal">
+        <div class="preview-header">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          Aperçu de votre email
+        </div>
+        <div class="preview-body">
+          <div class="preview-row"><span class="lbl">À :</span><span class="val">snaong2000@yahoo.fr</span></div>
+          <div class="preview-row"><span class="lbl">De :</span><span class="val placeholder" id="pv-from">votre email...</span></div>
+          <div class="preview-row"><span class="lbl">Objet :</span><span class="val placeholder" id="pv-subject">objet du message...</span></div>
+          <div class="preview-message placeholder" id="pv-message">Votre message apparaîtra ici au fur et à mesure que vous l'écrivez...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map-section">
+  <div class="container">
+    <div class="section-head reveal" style="max-width:600px;margin:0 auto 44px;text-align:center">
+      <span class="eyebrow">Nous trouver</span>
+      <h2 style="font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.2vw,34px);color:var(--navy)">Notre localisation</h2>
+      <p style="margin-top:12px;color:var(--text);font-size:15px">Quartier Gah, Djougou — cliquez sur la carte pour lancer l'itinéraire.</p>
+    </div>
+    <a class="map-frame reveal" href="https://www.google.com/maps/dir/?api=1&destination=Quartier+Gah+Djougou+Benin" target="_blank" rel="noopener">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=Djougou,%20Quartier%20Gah,%20B%C3%A9nin&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+      <div class="map-overlay">
+        <span class="map-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.5 3V7L9 4m0 16l6 3m-6-3V4m6 19l5.5-3V4L15 7m0 16V7m0 0L9 4"/></svg>
+          Lancer l'itinéraire sur Google Maps
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="cta-don">
+  <div class="container cta-box">
+    <div>
+      <h2>Une question avant de vous engager ?</h2>
+      <p>N'hésitez pas à nous écrire — nous sommes là pour répondre.</p>
+    </div>
+    <a href="don.html" class="btn btn-primary">Faire un don</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><img src="logo.png" alt="SNA-ONG"><span>SNA-ONG</span></div>
+        <p>Sud-Nord Actions ONG — culture, santé, éducation, droits humains et eau à Djougou, Bénin, depuis 1997.</p>
+      </div>
+      <div class="footer-col"><h4 class="footer-title">Navigation</h4><ul class="footer-links"><li><a href="a-propos.html">À propos</a></li><li><a href="statuts.html">Statuts</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="actualites.html">Actualités</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Explorer</h4><ul class="footer-links"><li><a href="galerie.html">Galerie</a></li><li><a href="don.html">Faire un don</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Contact</h4><ul class="footer-links"><li><a href="mailto:snaong2000@yahoo.fr">snaong2000@yahoo.fr</a></li><li><a href="tel:+22997643716">(+229) 97 64 37 16</a></li><li>Quartier Gah, BP 193, Djougou</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> SNA-ONG — Sud-Nord Actions. Tous droits réservés.</span>
+      <a href="https://wa.me/2290191175358" target="_blank" rel="noopener">Site conçu par DineTech</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+
+<script>
+(() => {
+  "use strict";
+  const header = document.getElementById('site-header');
+  const backTop = document.getElementById('backTop');
+  function onScroll(){
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 30);
+    backTop.classList.toggle('show', y > 500);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const navOverlay = document.getElementById('nav-overlay');
+  function closeMenu(){
+    navMenu.classList.remove('open'); menuBtn.classList.remove('open'); navOverlay.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Ouvrir le menu');
+  }
+  function toggleMenu(){
+    const opened = navMenu.classList.toggle('open');
+    menuBtn.classList.toggle('open', opened); navOverlay.classList.toggle('open', opened);
+    menuBtn.setAttribute('aria-expanded', opened); menuBtn.setAttribute('aria-label', opened ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  menuBtn.addEventListener('click', toggleMenu);
+  navOverlay.addEventListener('click', closeMenu);
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+  backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el => io.observe(el));
+
+  /* ---- Preview email en direct ---- */
+  const fName = document.getElementById('f-name');
+  const fEmail = document.getElementById('f-email');
+  const fSubject = document.getElementById('f-subject');
+  const fMessage = document.getElementById('f-message');
+  const pvFrom = document.getElementById('pv-from');
+  const pvSubject = document.getElementById('pv-subject');
+  const pvMessage = document.getElementById('pv-message');
+
+  function updatePreview(){
+    if(fName.value.trim() || fEmail.value.trim()){
+      pvFrom.textContent = `${fName.value.trim() || 'Votre nom'} <${fEmail.value.trim() || 'votre email'}>`;
+      pvFrom.classList.remove('placeholder');
+    } else {
+      pvFrom.textContent = 'votre email...';
+      pvFrom.classList.add('placeholder');
+    }
+    if(fSubject.value.trim()){
+      pvSubject.textContent = fSubject.value.trim();
+      pvSubject.classList.remove('placeholder');
+    } else {
+      pvSubject.textContent = 'objet du message...';
+      pvSubject.classList.add('placeholder');
+    }
+    if(fMessage.value.trim()){
+      pvMessage.textContent = fMessage.value;
+      pvMessage.classList.remove('placeholder');
+    } else {
+      pvMessage.textContent = "Votre message apparaîtra ici au fur et à mesure que vous l'écrivez...";
+      pvMessage.classList.add('placeholder');
+    }
+  }
+  [fName, fEmail, fSubject, fMessage].forEach(el => el.addEventListener('input', updatePreview));
+
+  /* ---- Envoi via mailto ---- */
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = fName.value.trim();
+    const email = fEmail.value.trim();
+    const subject = fSubject.value.trim();
+    const message = fMessage.value.trim();
+    const body = `Nom : ${name}\nEmail : ${email}\n\n${message}`;
+    const mailto = `mailto:snaong2000@yahoo.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  });
+})();
+</script>
+
+</body>
+</html>

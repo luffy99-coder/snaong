@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faire un don — SNA-ONG | Sud-Nord Actions</title>
+<meta name="description" content="Soutenez Sud-Nord Actions ONG à Djougou, Bénin. Faites une proposition de don pour la culture, la santé, l'éducation, les droits humains ou l'eau.">
+<link rel="canonical" href="https://snaong.org/don.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Faire un don — SNA-ONG">
+<meta property="og:description" content="Votre soutien change une vie, une goutte d'eau, un chant à la fois.">
+<meta property="og:image" content="https://snaong.org/hero.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Comment se fait le don concrètement ?","acceptedAnswer":{"@type":"Answer","text":"Vous remplissez le formulaire avec le montant et le domaine envisagés. Un email est envoyé à SNA-ONG, qui vous recontacte rapidement pour vous indiquer les modalités exactes de versement (virement, Mobile Money, etc.)."}},
+    {"@type":"Question","name":"Le don est-il déductible d'impôts ?","acceptedAnswer":{"@type":"Answer","text":"Cela dépend de votre pays de résidence et de la réglementation fiscale applicable. SNA-ONG peut vous fournir un reçu de don sur demande — précisez-le dans votre message."}},
+    {"@type":"Question","name":"Puis-je donner autre chose que de l'argent ?","acceptedAnswer":{"@type":"Answer","text":"Oui, SNA-ONG accepte aussi les dons en nature (matériel, équipements) et le bénévolat de compétences. Indiquez-le dans le formulaire."}},
+    {"@type":"Question","name":"Comment savoir où va mon argent ?","acceptedAnswer":{"@type":"Answer","text":"SNA-ONG est une organisation enregistrée et transparente dans sa gouvernance, avec un Trésorier Général et un Comité de Contrôle. Vous pouvez consulter nos statuts et suivre nos actualités pour voir l'impact concret de vos dons."}},
+    {"@type":"Question","name":"Puis-je faire un don récurrent ?","acceptedAnswer":{"@type":"Answer","text":"Oui, précisez simplement 'don mensuel' ou 'don récurrent' dans le formulaire, et SNA-ONG vous accompagnera pour la mise en place."}}
+  ]
+}
+</script>
+<style>
+:root{
+  --navy:#1B3A5C; --navy-dark:#0F2340; --green:#2E7D4F; --green-dark:#1F5C38;
+  --gold:#C9974C; --ink:#1C1F26; --text:#4B5563; --muted:#7A8590;
+  --white:#FFFFFF; --surface:#F5F7F9; --line:rgba(27,58,92,.1);
+  --shadow-sm:0 6px 18px rgba(15,35,64,.08); --shadow-md:0 16px 40px rgba(15,35,64,.12);
+  --radius:14px; --disp:'Playfair Display',serif; --body:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,.8,.25,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer}
+input,textarea,select{font:inherit}
+::selection{background:var(--green);color:var(--white)}
+.container{width:min(1200px,calc(100% - 48px));margin-inline:auto}
+.container.narrow{max-width:780px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;height:82px;display:flex;align-items:center;transition:height .3s var(--ease);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+header.scrolled{height:70px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:42px;transition:height .3s ease}
+header.scrolled .brand img{height:36px}
+.brand-name{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--navy)}
+nav{display:flex;align-items:center;gap:6px}
+.nav-link{padding:10px 16px;font-size:14px;font-weight:500;color:var(--ink);border-radius:8px;transition:background .2s ease,color .2s ease}
+.nav-link:hover,.nav-link.active{background:var(--surface);color:var(--green)}
+.nav-cta{margin-left:8px;background:var(--green);color:var(--white);padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s ease,transform .2s ease}
+.nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;position:relative}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;transition:transform .3s var(--ease),opacity .2s ease}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(15,35,64,.4);z-index:998;opacity:0;transition:opacity .3s ease}
+.nav-overlay.open{display:block;opacity:1}
+
+.page-hero{position:relative;padding:150px 0 70px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(201,151,76,.15),transparent 70%)}
+.page-hero-inner{position:relative;z-index:1;max-width:680px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+
+.page-hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.5vw,50px);line-height:1.15;color:var(--white);margin-bottom:16px}
+.page-hero p{font-size:16.5px;color:rgba(255,255,255,.75);max-width:560px}
+
+section{padding:90px 0}
+.section-head{max-width:620px;margin:0 auto 50px;text-align:center}
+.section-head h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.2vw,34px);color:var(--navy);line-height:1.25}
+.section-head p{margin-top:12px;color:var(--text);font-size:15px}
+
+/* Impact / domaines */
+.impact-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.impact-card{background:var(--surface);border-radius:var(--radius);padding:24px 18px;text-align:center;transition:transform .3s var(--ease)}
+.impact-card:hover{transform:translateY(-5px)}
+.impact-icon{width:40px;height:40px;margin:0 auto 14px;color:var(--green)}
+.impact-card:nth-child(2) .impact-icon{color:var(--navy)}
+.impact-card:nth-child(3) .impact-icon{color:var(--gold)}
+.impact-card:nth-child(4) .impact-icon{color:#B8543F}
+.impact-card:nth-child(5) .impact-icon{color:#3B7FA6}
+.impact-card h4{font-family:var(--disp);font-weight:600;font-size:13.5px;color:var(--navy);line-height:1.4}
+
+/* Formulaire + preview */
+.don-section{background:var(--surface)}
+.don-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+.form-box{background:var(--white);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow-sm)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.form-group input, .form-group textarea, .form-group select{
+  width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:9px;
+  font-size:14.5px;color:var(--ink);background:var(--surface);transition:border-color .2s ease,background .2s ease;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus{outline:none;border-color:var(--green);background:var(--white)}
+.form-group textarea{resize:vertical;min-height:100px}
+.amount-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.amount-btn{padding:12px 4px;border:1.5px solid var(--line);border-radius:9px;background:var(--surface);font-size:13.5px;font-weight:600;color:var(--navy);text-align:center;transition:.2s ease}
+.amount-btn:hover{border-color:var(--green)}
+.amount-btn.active{background:var(--green);color:var(--white);border-color:var(--green)}
+.radio-group{display:flex;gap:10px;flex-wrap:wrap}
+.radio-chip{padding:10px 16px;border:1.5px solid var(--line);border-radius:20px;font-size:13px;font-weight:500;color:var(--navy);cursor:pointer;transition:.2s ease}
+.radio-chip.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:9px;font-size:14.5px;font-weight:600;border:none;transition:transform .2s var(--ease),background .2s ease,box-shadow .2s ease;width:100%;justify-content:center}
+.btn-primary{background:var(--green);color:var(--white);box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+
+/* Preview */
+.preview-box{background:var(--navy-dark);border-radius:var(--radius);overflow:hidden;position:sticky;top:110px;color:var(--white)}
+.preview-header{background:rgba(255,255,255,.06);padding:14px 22px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--gold)}
+.preview-body{padding:28px}
+.preview-amount{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5vw,44px);color:var(--white);margin-bottom:6px}
+.preview-amount.placeholder{color:rgba(255,255,255,.3)}
+.preview-freq{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:22px}
+.preview-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13.5px}
+.preview-row .lbl{color:rgba(255,255,255,.45);min-width:80px;flex-shrink:0}
+.preview-row .val{color:var(--white);font-weight:500;word-break:break-word}
+.preview-row .val.placeholder{color:rgba(255,255,255,.35);font-style:italic;font-weight:400}
+.preview-message{margin-top:16px;font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.7;white-space:pre-wrap;min-height:50px}
+.preview-message.placeholder{color:rgba(255,255,255,.35);font-style:italic}
+.preview-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,151,76,.15);color:var(--gold);padding:6px 12px;border-radius:20px;font-size:11.5px;font-weight:600;margin-top:20px}
+
+/* Réassurance */
+.reassure{display:flex;align-items:center;gap:20px;background:var(--surface);border-radius:var(--radius);padding:24px 28px;margin-top:60px}
+.reassure-icon{width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.reassure p{font-size:14px;color:var(--text)}
+.reassure a{color:var(--navy);font-weight:600;text-decoration:underline}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;cursor:pointer;font-family:var(--disp);font-weight:600;font-size:16.5px;color:var(--navy)}
+.faq-icon{width:22px;height:22px;flex-shrink:0;color:var(--green);transition:transform .3s var(--ease)}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.faq-answer p{padding:0 4px 22px;font-size:14.5px;color:var(--text);line-height:1.7;max-width:640px}
+
+.cta-final{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);text-align:center}
+.cta-final h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.6vw,36px);max-width:640px;margin:0 auto 16px}
+.cta-final p{color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 30px;font-size:15px}
+
+footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr .9fr;gap:48px;padding-bottom:44px}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand img{height:38px}
+.footer-brand span{font-family:var(--disp);font-weight:700;font-size:16px}
+.footer-col p{font-size:13.5px;color:rgba(255,255,255,.6);max-width:280px;line-height:1.75}
+.footer-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:16px;font-weight:700}
+.footer-links{display:grid;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.72)}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:rgba(255,255,255,.45)}
+.footer-bottom a{color:rgba(255,255,255,.45)}
+
+.back-top{position:fixed;right:24px;bottom:24px;z-index:500;width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:var(--white);box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s var(--ease);border:none}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:1000px){
+  .impact-grid{grid-template-columns:repeat(2,1fr)}
+  .don-grid{grid-template-columns:1fr;gap:36px}
+  .preview-box{position:static}
+  .amount-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .reassure{flex-direction:column;text-align:center}
+}
+@media(max-width:680px){
+  nav{position:fixed;top:0;right:0;width:min(320px,86vw);height:100svh;background:var(--white);flex-direction:column;align-items:stretch;padding:100px 24px 30px;gap:4px;transform:translateX(105%);transition:transform .4s var(--ease);box-shadow:-16px 0 50px rgba(0,0,0,.12)}
+  nav.open{transform:translateX(0)}
+  .menu-btn{display:block}
+  .nav-cta{margin-left:0;text-align:center}
+  section{padding:64px 0}
+  .form-box{padding:26px 22px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .amount-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="logo.png" alt="SNA-ONG"><span class="brand-name">SNA-ONG</span></a>
+    <nav id="nav-menu">
+      <a href="a-propos.html" class="nav-link">À propos</a>
+      <a href="statuts.html" class="nav-link">Statuts</a>
+      <a href="equipe.html" class="nav-link">Équipe</a>
+      <a href="actualites.html" class="nav-link">Actualités</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="don.html" class="nav-cta">Faire un don</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<section class="page-hero">
+  <div class="container page-hero-inner reveal">
+    <span class="eyebrow">Soutenir SNA-ONG</span>
+    <h1>Votre soutien change une vie, une goutte d'eau, un chant à la fois</h1>
+    <p>Chaque don contribue directement aux actions de Sud-Nord Actions à Djougou et dans la Donga.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;color:var(--green)">Votre impact</span>
+      <h2>Où va votre don</h2>
+      <p>Votre soutien finance directement l'un de nos cinq domaines d'action.</p>
+    </div>
+    <div class="impact-grid reveal">
+      <div class="impact-card"><svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V6l7 3.5v9"/><path d="M9 6L4 8.5v9L9 20"/></svg><h4>Culture &amp; tourisme solidaire</h4></div>
+      <div class="impact-card"><svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 3.5 1.2 4 2.5C10.5 5.2 12 4 14 4c4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg><h4>Santé communautaire</h4></div>
+      <div class="impact-card"><svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg><h4>Éducation &amp; insertion</h4></div>
+      <div class="impact-card"><svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><h4>Droits humains &amp; enfant</h4></div>
+      <div class="impact-card"><svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C12 2 5 10 5 15a7 7 0 0014 0c0-5-7-13-7-13z"/></svg><h4>Eau &amp; environnement</h4></div>
+    </div>
+  </div>
+</section>
+
+<section class="don-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Faire une proposition de don</span>
+      <h2>Votre générosité, à votre façon</h2>
+      <p>Choisissez un montant, un domaine, et nous vous recontactons pour finaliser les modalités.</p>
+    </div>
+    <div class="don-grid">
+      <div class="form-box reveal">
+        <form id="don-form">
+          <div class="form-group">
+            <label>Montant du don (€)</label>
+            <div class="amount-grid" id="amount-grid">
+              <div class="amount-btn" data-amount="10">10€</div>
+              <div class="amount-btn" data-amount="25">25€</div>
+              <div class="amount-btn" data-amount="50">50€</div>
+              <div class="amount-btn" data-amount="100">100€</div>
+              <div class="amount-btn" data-amount="autre">Autre</div>
+            </div>
+            <input type="number" id="f-amount-custom" placeholder="Montant en euros" style="display:none">
+          </div>
+          <div class="form-group">
+            <label>Fréquence</label>
+            <div class="radio-group" id="freq-group">
+              <div class="radio-chip active" data-freq="Ponctuel">Ponctuel</div>
+              <div class="radio-chip" data-freq="Mensuel">Mensuel</div>
+              <div class="radio-chip" data-freq="Nature / compétences">Nature / compétences</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-domaine">Domaine à soutenir</label>
+            <select id="f-domaine">
+              <option value="Là où le besoin est le plus grand">Là où le besoin est le plus grand</option>
+              <option value="Culture traditionnelle et tourisme solidaire">Culture traditionnelle et tourisme solidaire</option>
+              <option value="Santé communautaire et nutrition">Santé communautaire et nutrition</option>
+              <option value="Éducation, formation et insertion professionnelle">Éducation, formation et insertion professionnelle</option>
+              <option value="Promotion des droits humains et protection de l'enfant">Promotion des droits humains et protection de l'enfant</option>
+              <option value="Eau, hygiène et environnement">Eau, hygiène et environnement</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-name">Nom complet</label>
+            <input type="text" id="f-name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" placeholder="vous@exemple.com" required>
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Téléphone (optionnel)</label>
+            <input type="tel" id="f-phone" placeholder="+xxx xx xx xx xx">
+          </div>
+          <div class="form-group">
+            <label for="f-message">Message (optionnel)</label>
+            <textarea id="f-message" placeholder="Précisions, demande de reçu, disponibilités..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
+            Envoyer ma proposition de don
+          </button>
+        </form>
+      </div>
+
+      <div class="preview-box reveal">
+        <div class="preview-header">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
+          Aperçu de votre don
+        </div>
+        <div class="preview-body">
+          <div class="preview-amount placeholder" id="pv-amount">— €</div>
+          <div class="preview-freq" id="pv-freq">Ponctuel</div>
+          <div class="preview-row"><span class="lbl">Domaine :</span><span class="val" id="pv-domaine">Là où le besoin est le plus grand</span></div>
+          <div class="preview-row"><span class="lbl">Nom :</span><span class="val placeholder" id="pv-name">votre nom...</span></div>
+          <div class="preview-row"><span class="lbl">Contact :</span><span class="val placeholder" id="pv-contact">email / téléphone...</span></div>
+          <div class="preview-message placeholder" id="pv-message">Votre message apparaîtra ici...</div>
+          <div class="preview-badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
+            SNA-ONG vous recontacte sous 48h
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reassure reveal">
+      <div class="reassure-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg></div>
+      <p>SNA-ONG est une organisation enregistrée et transparente (récépissé n°2000/168/MISAT, IFU 6201100004103), dotée d'un Trésorier Général et d'un Comité de Contrôle. Consultez nos <a href="statuts.html">statuts officiels</a> pour en savoir plus.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Questions fréquentes</span>
+      <h2>Tout savoir avant de donner</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-question"><span>Comment se fait le don concrètement ?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-answer"><p>Vous remplissez le formulaire ci-dessus avec le montant et le domaine envisagés. Un email est envoyé à SNA-ONG, qui vous recontacte rapidement pour vous indiquer les modalités exactes de versement (virement, Mobile Money, etc.).</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>Le don est-il déductible d'impôts ?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-answer"><p>Cela dépend de votre pays de résidence et de la réglementation fiscale applicable. SNA-ONG peut vous fournir un reçu de don sur demande — précisez-le dans votre message.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>Puis-je donner autre chose que de l'argent ?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-answer"><p>Oui, SNA-ONG accepte aussi les dons en nature (matériel, équipements) et le bénévolat de compétences. Sélectionnez "Nature / compétences" dans le formulaire.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>Comment savoir où va mon argent ?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-answer"><p>SNA-ONG est une organisation enregistrée et transparente dans sa gouvernance, avec un Trésorier Général et un Comité de Contrôle. Consultez nos statuts et suivez nos actualités pour voir l'impact concret de vos dons.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>Puis-je faire un don récurrent ?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-answer"><p>Oui, sélectionnez "Mensuel" comme fréquence dans le formulaire, et SNA-ONG vous accompagnera pour la mise en place de votre don récurrent.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container reveal">
+    <h2>Chaque geste compte</h2>
+    <p>Merci de faire partie de l'aventure Sud-Nord Actions.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><img src="logo.png" alt="SNA-ONG"><span>SNA-ONG</span></div>
+        <p>Sud-Nord Actions ONG — culture, santé, éducation, droits humains et eau à Djougou, Bénin, depuis 1997.</p>
+      </div>
+      <div class="footer-col"><h4 class="footer-title">Navigation</h4><ul class="footer-links"><li><a href="a-propos.html">À propos</a></li><li><a href="statuts.html">Statuts</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="actualites.html">Actualités</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Explorer</h4><ul class="footer-links"><li><a href="galerie.html">Galerie</a></li><li><a href="don.html">Faire un don</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 class="footer-title">Contact</h4><ul class="footer-links"><li><a href="mailto:snaong2000@yahoo.fr">snaong2000@yahoo.fr</a></li><li><a href="tel:+22997643716">(+229) 97 64 37 16</a></li><li>Quartier Gah, BP 193, Djougou</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> SNA-ONG — Sud-Nord Actions. Tous droits réservés.</span>
+      <a href="https://wa.me/2290191175358" target="_blank" rel="noopener">Site conçu par DineTech</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+
+<script>
+(() => {
+  "use strict";
+  const header = document.getElementById('site-header');
+  const backTop = document.getElementById('backTop');
+  function onScroll(){
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 30);
+    backTop.classList.toggle('show', y > 500);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const navOverlay = document.getElementById('nav-overlay');
+  function closeMenu(){
+    navMenu.classList.remove('open'); menuBtn.classList.remove('open'); navOverlay.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Ouvrir le menu');
+  }
+  function toggleMenu(){
+    const opened = navMenu.classList.toggle('open');
+    menuBtn.classList.toggle('open', opened); navOverlay.classList.toggle('open', opened);
+    menuBtn.setAttribute('aria-expanded', opened); menuBtn.setAttribute('aria-label', opened ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  menuBtn.addEventListener('click', toggleMenu);
+  navOverlay.addEventListener('click', closeMenu);
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+  backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el => io.observe(el));
+
+  /* ---- Montants ---- */
+  let selectedAmount = null;
+  const amountBtns = document.querySelectorAll('.amount-btn');
+  const customInput = document.getElementById('f-amount-custom');
+  amountBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      amountBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if(btn.dataset.amount === 'autre'){
+        customInput.style.display = 'block';
+        customInput.focus();
+        selectedAmount = customInput.value ? customInput.value + '€' : null;
+      } else {
+        customInput.style.display = 'none';
+        selectedAmount = btn.dataset.amount + '€';
+      }
+      updatePreview();
+    });
+  });
+  customInput.addEventListener('input', () => {
+    selectedAmount = customInput.value ? customInput.value + '€' : null;
+    updatePreview();
+  });
+
+  /* ---- Fréquence ---- */
+  let selectedFreq = 'Ponctuel';
+  const freqChips = document.querySelectorAll('#freq-group .radio-chip');
+  freqChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      freqChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      selectedFreq = chip.dataset.freq;
+      updatePreview();
+    });
+  });
+
+  /* ---- Preview ---- */
+  const fDomaine = document.getElementById('f-domaine');
+  const fName = document.getElementById('f-name');
+  const fEmail = document.getElementById('f-email');
+  const fPhone = document.getElementById('f-phone');
+  const fMessage = document.getElementById('f-message');
+
+  function updatePreview(){
+    const pvAmount = document.getElementById('pv-amount');
+    if(selectedAmount){ pvAmount.textContent = selectedAmount; pvAmount.classList.remove('placeholder'); }
+    else { pvAmount.textContent = '— €'; pvAmount.classList.add('placeholder'); }
+
+    document.getElementById('pv-freq').textContent = selectedFreq;
+    document.getElementById('pv-domaine').textContent = fDomaine.value;
+
+    const pvName = document.getElementById('pv-name');
+    if(fName.value.trim()){ pvName.textContent = fName.value.trim(); pvName.classList.remove('placeholder'); }
+    else { pvName.textContent = 'votre nom...'; pvName.classList.add('placeholder'); }
+
+    const pvContact = document.getElementById('pv-contact');
+    const contactParts = [fEmail.value.trim(), fPhone.value.trim()].filter(Boolean);
+    if(contactParts.length){ pvContact.textContent = contactParts.join(' · '); pvContact.classList.remove('placeholder'); }
+    else { pvContact.textContent = 'email / téléphone...'; pvContact.classList.add('placeholder'); }
+
+    const pvMessage = document.getElementById('pv-message');
+    if(fMessage.value.trim()){ pvMessage.textContent = fMessage.value; pvMessage.classList.remove('placeholder'); }
+    else { pvMessage.textContent = 'Votre message apparaîtra ici...'; pvMessage.classList.add('placeholder'); }
+  }
+  [fDomaine, fName, fEmail, fPhone, fMessage].forEach(el => el.addEventListener('input', updatePreview));
+  fDomaine.addEventListener('change', updatePreview);
+
+  /* ---- Envoi mailto ---- */
+  document.getElementById('don-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const amount = selectedAmount || 'Montant non précisé';
+    const freq = selectedFreq;
+    const domaine = fDomaine.value;
+    const name = fName.value.trim();
+    const email = fEmail.value.trim();
+    const phone = fPhone.value.trim();
+    const message = fMessage.value.trim();
+
+    const body = `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone || 'non renseigné'}\n\nMontant envisagé : ${amount}\nFréquence : ${freq}\nDomaine à soutenir : ${domaine}\n\nMessage :\n${message || 'aucun'}`;
+    const subject = `Nouvelle proposition de don — ${name || 'Sans nom'}`;
+    const mailto = `mailto:snaong2000@yahoo.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  });
+
+  /* ---- FAQ accordéon ---- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(other => {
+        if(other !== item){
+          other.classList.remove('open');
+          other.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
