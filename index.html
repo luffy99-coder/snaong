@@ -161,9 +161,11 @@ section{padding:100px 0}
 .propos-link{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;color:var(--green);font-size:14.5px}
 .propos-link:hover{gap:12px}
 
-/* Actus */
-.actus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.actu-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+/* Actus — carrousel */
+.actus-carousel{position:relative}
+.actus-viewport{overflow:hidden}
+.actus-track{display:flex;gap:24px;will-change:transform}
+.actu-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease);flex:0 0 calc((100% - 48px)/3)}
 .actu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
 .actu-media{aspect-ratio:16/10;overflow:hidden}
 .actu-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
@@ -173,6 +175,19 @@ section{padding:100px 0}
 .actu-body h3{font-family:var(--disp);font-weight:600;font-size:17px;color:var(--navy);margin:10px 0 8px;line-height:1.35}
 .actu-body p{font-size:13.5px;color:var(--text)}
 .actus-foot{text-align:center;margin-top:44px}
+.actus-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:32px}
+.actus-arrow{width:44px;height:44px;border-radius:50%;background:var(--white);border:1.5px solid var(--line);color:var(--navy);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease;flex-shrink:0}
+.actus-arrow:hover{background:var(--green);border-color:var(--green);color:var(--white);transform:translateY(-2px)}
+.actus-arrow svg{width:18px;height:18px}
+.actus-dots{display:flex;align-items:center;gap:8px}
+.actus-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;transition:background .25s ease,transform .25s ease;padding:0}
+.actus-dot.active{background:var(--green);transform:scale(1.3)}
+@media(max-width:1000px){
+  .actu-card{flex:0 0 calc((100% - 24px)/2)}
+}
+@media(max-width:680px){
+  .actu-card{flex:0 0 100%}
+}
 
 /* CTA don */
 .cta-don{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);position:relative;overflow:hidden}
@@ -334,19 +349,28 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
       <span class="eyebrow">Sur le terrain</span>
       <h2>Actualités récentes</h2>
     </div>
-    <div class="actus-grid reveal">
-      <a href="actualites.html" class="actu-card">
-        <div class="actu-media"><img src="hero.png" alt="Musiques et danses traditionnelles"></div>
-        <div class="actu-body"><span class="actu-date">2019 — 2020</span><h3>Musiques et danses traditionnelles à l'honneur</h3><p>Programme RePaSOC/UE à Djougou, Copargo, Ouaké et Bassila.</p></div>
-      </a>
-      <a href="actualites.html" class="actu-card">
-        <div class="actu-media"><img src="hero.png" alt="Eau potable Natitingou"></div>
-        <div class="actu-body"><span class="actu-date">2021</span><h3>Eau potable pour deux écoles de Natitingou</h3><p>Ouvrages d'accès à l'eau et à l'assainissement en milieu scolaire.</p></div>
-      </a>
-      <a href="actualites.html" class="actu-card">
-        <div class="actu-media"><img src="hero.png" alt="Extension réseau eau Ouaké"></div>
-        <div class="actu-body"><span class="actu-date">2020</span><h3>Extension du réseau d'eau vers Salangawa</h3><p>Extension de l'AEV d'Assodé-Alayomdé vers la commune de Ouaké.</p></div>
-      </a>
+    <div class="actus-carousel reveal">
+      <div class="actus-viewport">
+        <div class="actus-track" id="actus-track">
+          <a href="actualites.html" class="actu-card">
+            <div class="actu-media"><img src="hero.png" alt="Musiques et danses traditionnelles"></div>
+            <div class="actu-body"><span class="actu-date">2019 — 2020</span><h3>Musiques et danses traditionnelles à l'honneur</h3><p>Programme RePaSOC/UE à Djougou, Copargo, Ouaké et Bassila.</p></div>
+          </a>
+          <a href="actualites.html" class="actu-card">
+            <div class="actu-media"><img src="hero.png" alt="Eau potable Natitingou"></div>
+            <div class="actu-body"><span class="actu-date">2021</span><h3>Eau potable pour deux écoles de Natitingou</h3><p>Ouvrages d'accès à l'eau et à l'assainissement en milieu scolaire.</p></div>
+          </a>
+          <a href="actualites.html" class="actu-card">
+            <div class="actu-media"><img src="hero.png" alt="Extension réseau eau Ouaké"></div>
+            <div class="actu-body"><span class="actu-date">2020</span><h3>Extension du réseau d'eau vers Salangawa</h3><p>Extension de l'AEV d'Assodé-Alayomdé vers la commune de Ouaké.</p></div>
+          </a>
+        </div>
+      </div>
+      <div class="actus-nav">
+        <button class="actus-arrow" id="actusPrev" aria-label="Actualité précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="actus-dots" id="actusDots"></div>
+        <button class="actus-arrow" id="actusNext" aria-label="Actualité suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
     </div>
     <div class="actus-foot"><a href="actualites.html" class="btn btn-outline">Toutes les actualités</a></div>
   </div>
@@ -449,6 +473,180 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
     }
   }, {threshold:.4});
   cio.observe(document.querySelector('.stats'));
+
+  /* ---- Actualités récentes depuis le Sheet CSV ---- */
+  const ACTUS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSMFnO43ctZMNrTQN2GWTwCxbKGE7yTtAN-Ryv35dBLV174GkOj64TeOHNJTDmpf1mHqwUdo9acz4oj/pub?gid=2026034436&single=true&output=csv";
+
+  function parseCSV(text){
+    const rows = [];
+    let row = [], field = '', inQuotes = false;
+    for(let i=0;i<text.length;i++){
+      const c = text[i], next = text[i+1];
+      if(inQuotes){
+        if(c === '"' && next === '"'){ field += '"'; i++; }
+        else if(c === '"'){ inQuotes = false; }
+        else field += c;
+      } else {
+        if(c === '"') inQuotes = true;
+        else if(c === ','){ row.push(field); field=''; }
+        else if(c === '\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+        else if(c === '\r'){ }
+        else field += c;
+      }
+    }
+    if(field.length || row.length){ row.push(field); rows.push(row); }
+    return rows.filter(r => r.some(v => v.trim() !== ''));
+  }
+
+  function csvToActus(text){
+    const rows = parseCSV(text);
+    if(rows.length < 2) return null;
+    const headers = rows[0].map(h => h.trim().toLowerCase());
+    const idx = {titre:headers.indexOf('titre'),date:headers.indexOf('date'),contenu:headers.indexOf('contenu'),image:headers.indexOf('image'),slug:headers.indexOf('slug')};
+    if(idx.titre === -1 || idx.slug === -1) return null;
+    return rows.slice(1).map(r => ({
+      titre:(r[idx.titre]||'').trim(),
+      date:(r[idx.date]||'').trim(),
+      contenu:(r[idx.contenu]||'').trim(),
+      image:(r[idx.image]||'').trim(),
+      slug:(r[idx.slug]||'').trim()
+    })).filter(a => a.titre && a.slug);
+  }
+
+  function resume(text, len){
+    if(!text) return '';
+    return text.length > len ? text.slice(0,len).trim() + '…' : text;
+  }
+
+  function renderHomeActus(actus){
+    const track = document.getElementById('actus-track');
+    const latest = actus.slice(0,6);
+    track.innerHTML = latest.map(a => `
+      <a href="actualites.html?slug=${encodeURIComponent(a.slug)}" class="actu-card">
+        <div class="actu-media"><img src="${a.image || 'hero.png'}" alt="${a.titre}" loading="lazy"></div>
+        <div class="actu-body"><span class="actu-date">${a.date}</span><h3>${a.titre}</h3><p>${resume(a.contenu, 90)}</p></div>
+      </a>`).join('');
+    initActusCarousel();
+  }
+
+  fetch(ACTUS_CSV_URL)
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => {
+      const actus = csvToActus(text);
+      if(actus && actus.length) renderHomeActus(actus);
+      else initActusCarousel();
+    })
+    .catch(() => { initActusCarousel(); /* garde les 3 actus par défaut déjà dans le HTML */ });
+
+  /* ---- Carrousel actus : auto-play + pause au survol + flèches + swipe ---- */
+  let actusInit = false;
+  function initActusCarousel(){
+    if(actusInit) return; actusInit = true;
+
+    const viewport = document.querySelector('.actus-viewport');
+    const track = document.getElementById('actus-track');
+    const prevBtn = document.getElementById('actusPrev');
+    const nextBtn = document.getElementById('actusNext');
+    const dotsWrap = document.getElementById('actusDots');
+    if(!track || !track.children.length) return;
+
+    const cards = Array.from(track.children);
+    let perView = getPerView();
+    let index = 0;
+    let autoTimer = null;
+    const AUTO_DELAY = 4500;
+
+    function getPerView(){
+      const w = window.innerWidth;
+      if(w <= 680) return 1;
+      if(w <= 1000) return 2;
+      return 3;
+    }
+
+    function maxIndex(){
+      return Math.max(0, cards.length - perView);
+    }
+
+    function buildDots(){
+      dotsWrap.innerHTML = '';
+      const pages = maxIndex() + 1;
+      for(let i=0;i<pages;i++){
+        const dot = document.createElement('button');
+        dot.className = 'actus-dot';
+        dot.setAttribute('aria-label', `Aller à la diapositive ${i+1}`);
+        dot.addEventListener('click', () => { goTo(i); restartAuto(); });
+        dotsWrap.appendChild(dot);
+      }
+      updateDots();
+    }
+
+    function updateDots(){
+      Array.from(dotsWrap.children).forEach((d,i) => d.classList.toggle('active', i === index));
+    }
+
+    function update(){
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const gap = 24;
+      const offset = index * (cardWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+      updateDots();
+    }
+
+    function goTo(i){
+      index = Math.max(0, Math.min(i, maxIndex()));
+      update();
+    }
+
+    function next(){ index = index >= maxIndex() ? 0 : index + 1; update(); }
+    function prev(){ index = index <= 0 ? maxIndex() : index - 1; update(); }
+
+    function startAuto(){
+      if(maxIndex() === 0) return;
+      autoTimer = setInterval(next, AUTO_DELAY);
+    }
+    function stopAuto(){ clearInterval(autoTimer); }
+    function restartAuto(){ stopAuto(); startAuto(); }
+
+    prevBtn.addEventListener('click', () => { prev(); restartAuto(); });
+    nextBtn.addEventListener('click', () => { next(); restartAuto(); });
+
+    viewport.addEventListener('mouseenter', stopAuto);
+    viewport.addEventListener('mouseleave', startAuto);
+
+    // Swipe tactile / drag souris
+    let startX = 0, isDragging = false, dragDelta = 0;
+    function dragStart(x){ isDragging = true; startX = x; dragDelta = 0; stopAuto(); track.style.transition = 'none'; }
+    function dragMove(x){ if(!isDragging) return; dragDelta = x - startX; }
+    function dragEnd(){
+      if(!isDragging) return;
+      isDragging = false;
+      track.style.transition = '';
+      if(dragDelta > 50) prev();
+      else if(dragDelta < -50) next();
+      else update();
+      restartAuto();
+    }
+    viewport.addEventListener('touchstart', e => dragStart(e.touches[0].clientX), {passive:true});
+    viewport.addEventListener('touchmove', e => dragMove(e.touches[0].clientX), {passive:true});
+    viewport.addEventListener('touchend', dragEnd);
+    viewport.addEventListener('mousedown', e => { dragStart(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', e => dragMove(e.clientX));
+    window.addEventListener('mouseup', dragEnd);
+
+    window.addEventListener('resize', () => {
+      const newPerView = getPerView();
+      if(newPerView !== perView){
+        perView = newPerView;
+        index = Math.min(index, maxIndex());
+        buildDots();
+      }
+      update();
+    });
+
+    buildDots();
+    update();
+    startAuto();
+  }
 })();
 </script>
 
