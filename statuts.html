@@ -100,12 +100,10 @@ section{padding:90px 0}
 .doc-card h3{font-family:var(--disp);font-weight:600;font-size:20px;color:var(--navy);margin-bottom:10px}
 .doc-card p{font-size:14px;color:var(--text);margin-bottom:8px}
 .doc-meta{font-size:12.5px;color:var(--muted);margin-bottom:22px}
-.doc-actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:9px;font-size:13.5px;font-weight:600;transition:transform .2s var(--ease),background .2s ease,box-shadow .2s ease}
-.btn-primary{background:var(--green);color:var(--white);box-shadow:var(--shadow-sm)}
-.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
-.btn-outline{border:1.5px solid var(--line);color:var(--navy);background:var(--white)}
-.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+.doc-points{display:grid;gap:10px;margin-top:20px}
+.doc-point{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--text);line-height:1.5}
+.doc-point svg{width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:3px}
+.doc-card:nth-child(2) .doc-point svg{color:var(--navy)}
 
 /* Structure organisationnelle */
 .structure{background:var(--surface)}
@@ -129,6 +127,11 @@ section{padding:90px 0}
 .valeur-item span:last-child{font-size:14px;color:var(--navy);font-weight:500}
 
 .cta-don{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);position:relative;overflow:hidden}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:9px;font-size:13.5px;font-weight:600;transition:transform .2s var(--ease),background .2s ease,box-shadow .2s ease}
+.btn-primary{background:var(--green);color:var(--white);box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-outline{border:1.5px solid var(--line);color:var(--navy);background:var(--white)}
+.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
 .cta-don::before{content:"";position:absolute;top:-40%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%)}
 .cta-box{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
 .cta-box h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.4vw,34px);max-width:560px;line-height:1.25}
@@ -227,9 +230,13 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
         <h3>Statuts de l'ONG</h3>
         <p>Création, dénomination, objet, objectifs, vision, mission et structure de gouvernance de Sud-Nord Actions.</p>
         <div class="doc-meta">50 articles · Amendés le 07/02/2026</div>
-        <div class="doc-actions">
-          <a href="statuts.pdf" target="_blank" class="btn btn-primary">Consulter le PDF</a>
-          <a href="statuts.pdf" download class="btn btn-outline">Télécharger</a>
+        <div class="doc-points">
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>ONG béninoise créée en 1997, siège à Djougou (récépissé n°2000/168/MISAT, IFU 6201100004103)</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Objet : développement communautaire durable par la culture, les chants, danses et musiques traditionnelles</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>5 domaines d'action : culture &amp; tourisme solidaire, santé communautaire, éducation, formation &amp; insertion professionnelle, droits humains, eau &amp; environnement</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Organisation laïque, apolitique et à but non lucratif, ouverte à tous sans distinction</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>4 organes : Assemblée Générale, Conseil d'Administration (5 membres), Comité de Contrôle, Direction Exécutive</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Ressources : cotisations, dons, subventions et financements nationaux/internationaux, gérées avec double signature</span></div>
         </div>
       </div>
       <div class="doc-card">
@@ -237,9 +244,13 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
         <h3>Règlement intérieur</h3>
         <p>Conditions d'adhésion, cotisations, fonctionnement des instances, discipline et sanctions.</p>
         <div class="doc-meta">42 articles · Amendé le 07/02/2026</div>
-        <div class="doc-actions">
-          <a href="reglement-interieur.pdf" target="_blank" class="btn btn-primary">Consulter le PDF</a>
-          <a href="reglement-interieur.pdf" download class="btn btn-outline">Télécharger</a>
+        <div class="doc-points">
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>5 types de membres : fondateurs, actifs, d'honneur, donateurs, sympathisants</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Adhésion sur dossier complet (demande manuscrite, CIP, casier judiciaire, acte de naissance) et droit d'adhésion de 5 000 F CFA</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Cotisation annuelle obligatoire de 10 000 F CFA pour les membres actifs</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Assemblée Générale Ordinaire une fois par an, quorum fixé aux 2/3 des membres</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Gestion des fonds encadrée : Trésorier Général, Coordonnateur Général, respect des règles de comptabilité publique</span></div>
+          <div class="doc-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Sanctions graduées : rappel à l'ordre, avertissement, blâme, exclusion définitive</span></div>
         </div>
       </div>
     </div>

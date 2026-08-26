@@ -286,8 +286,8 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
   <div class="container stats-grid">
     <div class="stat"><div class="stat-num" data-count="27">0</div><div class="stat-label">ans d'engagement</div></div>
     <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">domaines d'action</div></div>
-    <div class="stat"><div class="stat-num" data-count="4">0</div><div class="stat-label">communes couvertes</div></div>
-    <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">partenaires institutionnels</div></div>
+    <div class="stat"><div class="stat-num" data-count="12">0</div><div class="stat-label">départements couverts</div></div>
+    <div class="stat"><div class="stat-num" data-count="20" data-suffix="+">0</div><div class="stat-label">partenaires institutionnels</div></div>
   </div>
 </div>
 
@@ -311,7 +311,7 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
       </div>
       <div class="domaine">
         <div class="domaine-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></div>
-        <h3>Éducation &amp; insertion pro</h3>
+        <h3>Éducation, formation &amp; insertion professionnelle</h3>
         <p>Formation, scolarisation et insertion professionnelle des jeunes.</p>
       </div>
       <div class="domaine">
@@ -459,13 +459,14 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
       started = true;
       counters.forEach(el => {
         const target = parseInt(el.dataset.count,10);
+        const suffix = el.dataset.suffix || '';
         const duration = 1300;
         const start = performance.now();
         function update(now){
           const p = Math.min((now-start)/duration,1);
           const eased = 1 - Math.pow(1-p,4);
-          el.textContent = Math.floor(target*eased);
-          if(p<1) requestAnimationFrame(update); else el.textContent = target;
+          el.textContent = Math.floor(target*eased) + suffix;
+          if(p<1) requestAnimationFrame(update); else el.textContent = target + suffix;
         }
         requestAnimationFrame(update);
       });
