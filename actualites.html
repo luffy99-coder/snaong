@@ -318,6 +318,33 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
     return text.length > len ? text.slice(0,len).trim() + '…' : text;
   }
 
+  /* ---- Tri par date, quel que soit l'ordre/format dans le Sheet ---- */
+  function parseDateValue(dateStr){
+    if(!dateStr) return 0;
+    let m = dateStr.match(/(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})/);
+    if(m) return new Date(+m[3], +m[2]-1, +m[1]).getTime();
+    m = dateStr.match(/(\d{4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})/);
+    if(m) return new Date(+m[1], +m[2]-1, +m[3]).getTime();
+    const mois = {janvier:0,'février':1,fevrier:1,mars:2,avril:3,mai:4,juin:5,juillet:6,'août':7,aout:7,septembre:8,octobre:9,novembre:10,'décembre':11,decembre:11};
+    const lower = dateStr.toLowerCase();
+    for(const [name, idx] of Object.entries(mois)){
+      if(lower.includes(name)){
+        const y = lower.match(/\d{4}/);
+        if(y) return new Date(+y[0], idx, 1).getTime();
+      }
+    }
+    const years = dateStr.match(/\d{4}/g);
+    if(years && years.length){
+      const maxY = Math.max(...years.map(Number));
+      return new Date(maxY, 0, 1).getTime();
+    }
+    return 0;
+  }
+
+  function sortActusByDate(list){
+    return [...list].sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+  }
+
   let ACTUS = [];
 
   function renderList(){
@@ -426,11 +453,11 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
     .then(r => { if(!r.ok) throw new Error('fetch failed'); return r.text(); })
     .then(text => {
       const actus = csvToActus(text);
-      ACTUS = (actus && actus.length) ? actus : FALLBACK;
+      ACTUS = sortActusByDate((actus && actus.length) ? actus : FALLBACK);
       renderList();
       init();
     })
-    .catch(() => { ACTUS = FALLBACK; renderList(); init(); });
+    .catch(() => { ACTUS = sortActusByDate(FALLBACK); renderList(); init(); });
 
   window.addEventListener('popstate', () => {
     const params = new URLSearchParams(window.location.search);
