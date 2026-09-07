@@ -68,7 +68,7 @@ section{padding:90px 0}
 .section-head p{margin-top:12px;color:var(--text);font-size:15px}
 
 /* Coordonnateur mis en avant */
-.coord-section{background:var(--surface)}
+.coord-section{background:var(--white)}
 .coord-card{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;background:var(--white);border-radius:20px;padding:44px;box-shadow:var(--shadow-md);cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
 .coord-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .avatar-lg{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--navy));display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:52px;color:var(--white);flex-shrink:0;box-shadow:var(--shadow-md)}
@@ -181,16 +181,6 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
   </div>
 </section>
 
-<section class="coord-section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Direction Exécutive</span>
-      <h2>Le Coordonnateur Général</h2>
-    </div>
-    <div id="direction-slot"></div>
-  </div>
-</section>
-
 <section class="ca-section">
   <div class="container">
     <div class="section-head reveal">
@@ -210,6 +200,16 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
       <p>2 membres élus pour 3 ans, chargés de vérifier l'utilisation des ressources (article 34).</p>
     </div>
     <div class="team-grid reveal" id="controle-slot" style="grid-template-columns:repeat(2,minmax(0,280px));justify-content:center"></div>
+  </div>
+</section>
+
+<section class="coord-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Direction Exécutive</span>
+      <h2>Le Coordonnateur Général</h2>
+    </div>
+    <div id="direction-slot"></div>
   </div>
 </section>
 
@@ -338,17 +338,35 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
   /* ---- Chargement de l'équipe depuis Google Sheet CSV ---- */
   const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSMFnO43ctZMNrTQN2GWTwCxbKGE7yTtAN-Ryv35dBLV174GkOj64TeOHNJTDmpf1mHqwUdo9acz4oj/pub?gid=0&single=true&output=csv";
 
-  // Secours si le Sheet est vide ou inaccessible
+  // Secours si le Sheet est vide ou inaccessible — liste officielle CA/CC/DE
   const FALLBACK = [
-    {nom:"Sanni Mamam", poste:"Président du Conseil d'Administration · Coordonnateur Général", categorie:"direction", photo:"", description:"Premier responsable de la Direction Exécutive de SNA-ONG. Il assure la gestion quotidienne de l'organisation, représente SNA au plan national et international, et est l'interlocuteur privilégié des partenaires techniques et financiers."},
-    {nom:"Sanni Mamam", poste:"Président", categorie:"ca", photo:"", description:"Représentant légal de l'ONG, il convoque et préside les sessions de l'Assemblée Générale ainsi que les réunions du Conseil d'Administration."},
-    {nom:"Seidou M. Sabirou", poste:"Secrétaire", categorie:"ca", photo:"", description:"Tient les documents administratifs de l'organisation et assiste le Président dans l'exercice de ses fonctions."},
-    {nom:"Poste à pourvoir", poste:"Trésorier(ère)", categorie:"ca", photo:"", description:"Chargé(e) de la gestion des ressources matérielles et financières de SNA-ONG. Poste à pourvoir — informations à venir."},
-    {nom:"Poste à pourvoir", poste:"Chargé(e) des Affaires Sociales et de l'Emploi", categorie:"ca", photo:"", description:"Veille à l'application de l'idéal social de l'ONG et à la promotion de l'emploi. Poste à pourvoir — informations à venir."},
-    {nom:"Poste à pourvoir", poste:"Chargé(e) de la Formation et de l'Information", categorie:"ca", photo:"", description:"Évalue les besoins en formation et assure la communication au sein de l'organisation. Poste à pourvoir — informations à venir."},
-    {nom:"Idrissou Adjaratou", poste:"Rapporteur", categorie:"controle", photo:"", description:"Membre du Présidium ayant rédigé le rapport de l'Assemblée Générale extraordinaire du 7 février 2026."},
-    {nom:"Poste à pourvoir", poste:"Président(e) du Comité de Contrôle", categorie:"controle", photo:"", description:"Dirige le Comité de Contrôle chargé de vérifier l'utilisation des ressources de l'organisation. Poste à pourvoir — informations à venir."}
+    {nom:"Mamam Sanni", poste:"Coordonnateur Général", categorie:"direction", photo:"", description:"Premier responsable de la Direction Exécutive de SNA-ONG. Il assure la gestion quotidienne de l'organisation, représente SNA au plan national et international, et est l'interlocuteur privilégié des partenaires techniques et financiers."},
+    {nom:"Mouton Philippe Robert", poste:"Président du CA", categorie:"ca", photo:"", description:"Représentant légal de l'ONG, il convoque et préside les sessions de l'Assemblée Générale ainsi que les réunions du Conseil d'Administration."},
+    {nom:"Seidou Mouhamed Sabirou", poste:"Secrétaire du CA", categorie:"ca", photo:"", description:"Tient les documents administratifs de l'organisation et assiste le Président dans l'exercice de ses fonctions."},
+    {nom:"Vodounon Gilberte", poste:"Trésorière", categorie:"ca", photo:"", description:"Chargée de la gestion des ressources matérielles et financières de SNA-ONG."},
+    {nom:"Ouin-Ouro Germain", poste:"Chargé des affaires sociales et de l'emploi", categorie:"ca", photo:"", description:"Veille à l'application de l'idéal social de l'ONG et à la promotion de l'emploi."},
+    {nom:"Deguenon Augustin", poste:"Chargé de la formation et de l'information", categorie:"ca", photo:"", description:"Évalue les besoins en formation et assure la communication au sein de l'organisation."},
+    {nom:"Fousseni Allabani Abdou-Hafizou", poste:"Président du Comité de Contrôle", categorie:"controle", photo:"", description:"Dirige le Comité de Contrôle chargé de vérifier l'utilisation des ressources de l'organisation."},
+    {nom:"Idrissou Adjaratou", poste:"Rapporteur du Comité de Contrôle", categorie:"controle", photo:"", description:"Membre du Comité de Contrôle chargé de rédiger les rapports de contrôle."}
   ];
+
+  // Ordre officiel des postes par catégorie — s'applique même si le Sheet est désordonné
+  const ORDRE_POSTE = {
+    ca: ["président", "secrétaire", "trésorier", "trésorière", "chargé des affaires sociales et de l'emploi", "chargé de la formation et de l'information"],
+    controle: ["président", "rapporteur"],
+    direction: ["coordonnateur général"]
+  };
+
+  function rangPoste(categorie, poste){
+    const liste = ORDRE_POSTE[categorie] || [];
+    const p = (poste || '').toLowerCase();
+    const i = liste.findIndex(ref => p.includes(ref));
+    return i === -1 ? liste.length : i;
+  }
+
+  function sortByPosteOrder(list, categorie){
+    return [...list].sort((a, b) => rangPoste(categorie, a.poste) - rangPoste(categorie, b.poste));
+  }
 
   function parseCSV(text){
     const rows = [];
@@ -413,9 +431,9 @@ footer{background:var(--navy-dark);color:var(--white);padding:70px 0 26px}
   }
 
   function renderTeam(members){
-    const direction = members.filter(m => m.categorie === 'direction');
-    const ca = members.filter(m => m.categorie === 'ca');
-    const controle = members.filter(m => m.categorie === 'controle');
+    const direction = sortByPosteOrder(members.filter(m => m.categorie === 'direction'), 'direction');
+    const ca = sortByPosteOrder(members.filter(m => m.categorie === 'ca'), 'ca');
+    const controle = sortByPosteOrder(members.filter(m => m.categorie === 'controle'), 'controle');
 
     const directionSlot = document.getElementById('direction-slot');
     const caSlot = document.getElementById('ca-slot');
